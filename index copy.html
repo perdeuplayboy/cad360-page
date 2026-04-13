@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD360 Topografia | Georreferenciamento e Regulariza&ccedil;&atilde;o de Im&oacute;veis Rurais</title>
+    <meta name="description" content="Regularize seu im&oacute;vel rural sem risco de devolu&ccedil;&atilde;o no cart&oacute;rio. Documenta&ccedil;&atilde;o t&eacute;cnica feita para aprova&ccedil;&atilde;o de primeira &mdash; sem erro, sem retrabalho e sem perda de tempo. Atendimento em Juiz de Fora, Zona da Mata e Minas Gerais.">
+    <meta name="keywords" content="georreferenciamento, topografia, regulariza&ccedil;&atilde;o de im&oacute;vel rural, memorial descritivo, planta topogr&aacute;fica, levantamento topogr&aacute;fico, CAD360">
+    <meta name="author" content="CAD360 Topografia">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="CAD360 Topografia | Georreferenciamento e Regulariza&ccedil;&atilde;o de Im&oacute;veis Rurais">
+    <meta property="og:description" content="Regularize seu im&oacute;vel rural sem risco de devolu&ccedil;&atilde;o no cart&oacute;rio. Atendimento em Juiz de Fora, Zona da Mata e Minas Gerais.">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google Ads / Analytics: substitua G-XXXXXXXXXX pelo seu ID de medicao do Google -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green-dark: #0B3D2E;
+            --green-medium: #1A6B4A;
+            --green-light: #22855C;
+            --green-accent: #2ECC71;
+            --green-soft: #E8F5EE;
+            --white: #FFFFFF;
+            --gray-50: #F8FAF9;
+            --gray-100: #F0F4F2;
+            --gray-200: #D1DBD6;
+            --gray-300: #A3B5AC;
+            --gray-600: #4A5E54;
+            --gray-700: #2D3E35;
+            --gray-800: #1A2A22;
+            --red-soft: #E74C3C;
+            --shadow-sm: 0 1px 3px rgba(11, 61, 46, 0.08);
+            --shadow-md: 0 4px 16px rgba(11, 61, 46, 0.10);
+            --shadow-lg: 0 8px 32px rgba(11, 61, 46, 0.12);
+            --shadow-xl: 0 16px 48px rgba(11, 61, 46, 0.16);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--gray-700);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            color: var(--green-medium);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 2px;
+            background: var(--green-accent);
+        }
+
+        .section-title {
+            margin-bottom: 16px;
+            color: var(--green-dark);
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            max-width: 620px;
+            margin: 0 auto 48px;
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 32px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .btn-primary {
+            background: var(--green-accent);
+            color: var(--green-dark);
+            box-shadow: 0 4px 16px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .icon-badge,
+        .service-icon,
+        .pain-item-icon,
+        .authority-feature-icon,
+        .step-number,
+        .social-link,
+        .whatsapp-float {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-badge svg,
+        .service-icon svg,
+        .pain-item-icon svg,
+        .authority-feature-icon svg,
+        .social-link svg,
+        .whatsapp-float svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 10px 0;
+            background: var(--green-dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: auto;
+            height: 42px;
+            filter: brightness(0) invert(1);
+        }
+
+        .topbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--green-accent);
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+
+        .topbar-cta:hover {
+            opacity: 0.8;
+        }
+
+        .topbar-cta svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            stroke: none;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0 110px;
+            background: linear-gradient(145deg, var(--green-dark) 0%, #0D4A35 55%, var(--green-medium) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid-pattern {
+            display: none; /* substituído pela malha de coordenadas */
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 24px;
+            color: var(--white);
+            font-size: clamp(2.4rem, 5vw, 3.4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-content h1 .highlight {
+            color: var(--green-accent);
+        }
+
+        .hero-content p {
+            max-width: 560px;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 1.2rem;
+            line-height: 1.75;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 28px;
+            padding: 8px 16px;
+            border: 1px solid rgba(46, 204, 113, 0.25);
+            border-radius: 100px;
+            background: rgba(46, 204, 113, 0.12);
+            color: var(--green-accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-pill svg {
+            width: 14px;
+            height: 14px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2.5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .icon-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(46, 204, 113, 0.18);
+            color: var(--green-accent);
+            flex-shrink: 0;
+        }
+
+        .icon-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero-card {
+            padding: 40px 36px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-xl);
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+        }
+
+        .hero-card-title {
+            margin-bottom: 28px;
+            color: var(--green-accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-metric {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-metric:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .hero-metric-number {
+            margin-bottom: 6px;
+            color: var(--white);
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .hero-metric-number span {
+            color: var(--green-accent);
+        }
+
+        .hero-metric-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.87rem;
+            line-height: 1.5;
+        }
+
+        .pain-section {
+            background: var(--gray-50);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .pain-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px 28px;
+            border-left: 4px solid var(--red-soft);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s;
+        }
+
+        .pain-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .pain-item-icon {
+            width: 42px;
+            height: 42px;
+            margin-top: 2px;
+            border-radius: 12px;
+            background: var(--green-soft);
+            color: var(--green-medium);
+            flex-shrink: 0;
+        }
+
+        .pain-item h3 {
+            margin-bottom: 4px;
+            color: var(--gray-800);
+            font-size: 0.98rem;
+            font-weight: 700;
+        }
+
+        .pain-item p {
+            color: var(--gray-600);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .pain-cta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 36px 40px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+        }
+
+        .pain-cta-box p {
+            max-width: 540px;
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .pain-cta-box p span {
+            color: var(--green-accent);
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            flex: 0 1 calc(33.333% - 19px);
+            min-width: 280px;
+            padding: 40px 36px;
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--green-medium), var(--green-accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: transparent;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 24px;
+            border-radius: var(--radius-md);
+            background: var(--green-soft);
+            color: var(--green-medium);
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: var(--green-dark);
+            font-size: 1.1rem;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .authority-section {
+            background: var(--gray-50);
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .authority-text > p {
+            margin-bottom: 32px;
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .metric-card {
+            padding: 24px;
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .metric-number {
+            margin-bottom: 6px;
+            color: var(--green-dark);
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .metric-label {
+            color: var(--gray-600);
+            font-size: 0.83rem;
+            line-height: 1.5;
+        }
+
+        .authority-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .authority-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px 28px;
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .authority-feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .authority-feature h3 {
+            margin-bottom: 4px;
+            color: var(--green-dark);
+            font-size: 0.98rem;
+            font-weight: 700;
+        }
+
+        .authority-feature p {
+            color: var(--gray-600);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .how-section {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, var(--green-dark) 0%, #0D4A35 100%);
+        }
+
+        .how-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .how-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .how-section .section-label {
+            color: var(--green-accent);
+        }
+
+        .how-section .section-label::before {
+            background: var(--green-accent);
+        }
+
+        .how-section .section-title {
+            color: var(--white);
+        }
+
+        .how-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step-card {
+            padding: 32px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.06);
+            text-align: center;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--green-accent);
+            color: var(--green-dark);
+            font-size: 1.2rem;
+            font-weight: 900;
+        }
+
+        .step-card h3 {
+            margin-bottom: 8px;
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .step-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.87rem;
+            line-height: 1.6;
+        }
+
+        .cta-final {
+            background: var(--gray-50);
+        }
+
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+            padding: 64px;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            text-align: center;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.15) 0%, transparent 70%);
+        }
+
+        .cta-box > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-box h2 {
+            margin-bottom: 16px;
+            color: var(--white);
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .cta-box p {
+            max-width: 520px;
+            margin: 0 auto 36px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            padding: 60px 0 30px;
+            background: var(--gray-800);
+            color: var(--white);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-brand .logo img {
+            height: 80px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            max-width: 280px;
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--green-accent);
+            color: var(--green-dark);
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .social-link.is-whatsapp svg,
+        .cta-buttons .btn-primary svg,
+        .topbar-cta svg,
+        .whatsapp-float svg {
+            fill: currentColor;
+            stroke: none;
+        }
+
+        .social-link.is-instagram svg,
+        .cta-buttons .btn-outline-white svg {
+            fill: currentColor;
+            stroke: none;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: var(--green-accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            display: block;
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.9rem;
+            line-height: 2.1;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #FFFFFF;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse-wa 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        @keyframes pulse-wa {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                padding: 24px 20px;
+            }
+
+            .hero-card-title { font-size: 0.72rem; margin-bottom: 18px; }
+            .hero-metric { flex-direction: row; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; }
+            .hero-metric-number { font-size: 2rem; margin-bottom: 0; }
+            .hero-metric-label { font-size: 0.8rem; }
+
+            .authority-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 60px 0 72px;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-inline: auto;
+            }
+
+            .hero-buttons,
+            .hero-badges,
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .pain-cta-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .pain-cta-box .btn {
+                width: 100%;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+                margin-bottom: 8px;
+            }
+
+            .footer-col {
+                padding-top: 8px;
+                border-top: 1px solid rgba(255,255,255,0.06);
+            }
+
+            .footer-brand p {
+                margin-inline: auto;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .topbar .container {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .whatsapp-float {
+                right: 16px;
+                bottom: 16px;
+                width: 54px;
+                height: 54px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-badges,
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* ============================================
+           HERO COORD GRID — Malha de coordenadas
+           Estilo georreferenciamento (imagem referência)
+           ============================================ */
+
+        .hero-coord-grid {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* conteúdo do hero fica acima */
+        .hero .container { position: relative; z-index: 2; }
+
+        /* grade de linhas */
+        .hero-coord-grid .grid-lines {
+            position: absolute;
+            inset: 0;
+            /* linhas horizontais + verticais */
+            background-image:
+                linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+            background-size: 20% 25%; /* ~5 cols x 4 rows */
+            background-position: 0 0;
+        }
+
+        /* fade central: "ilha" que protege o conteúdo */
+        .hero-coord-grid .grid-fade {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 80% at 50% 50%,
+                    rgba(11,61,46,0.50) 0%,
+                    rgba(11,61,46,0.20) 40%,
+                    transparent 72%);
+            pointer-events: none;
+        }
+
+        /* rótulos de coordenada (esquerda — Northing) */
+        .hero-coord-grid .coord-left {
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4% 0;
+        }
+
+        .hero-coord-grid .coord-left span {
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(255,255,255,0.18);
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+        }
+
+        /* rótulos de coordenada (topo — Easting) */
+        .hero-coord-grid .coord-top {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 4%;
+        }
+
+        .hero-coord-grid .coord-top span {
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(255,255,255,0.18);
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+        }
+
+        /* rótulos de coordenada (direita — Northing duplicado) */
+        .hero-coord-grid .coord-right {
+            position: absolute;
+            right: 8px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4% 0;
+        }
+
+        .hero-coord-grid .coord-right span {
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(255,255,255,0.12);
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        /* rótulos de coordenada (inferior — Easting duplicado) */
+        .hero-coord-grid .coord-bottom {
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 4%;
+        }
+
+        .hero-coord-grid .coord-bottom span {
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(255,255,255,0.12);
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+        }
+
+        /* tick marks nas linhas de grade */
+        .hero-coord-grid .grid-ticks {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-coord-grid .grid-ticks .tick-h,
+        .hero-coord-grid .grid-ticks .tick-v {
+            position: absolute;
+            background: rgba(255,255,255,0.07);
+        }
+
+        /* ticks horizontais (marcas curtas na borda esquerda) */
+        .tick-h { width: 12px; height: 1px; left: 0; }
+        .tick-h:nth-child(1) { top: 25%; }
+        .tick-h:nth-child(2) { top: 50%; }
+        .tick-h:nth-child(3) { top: 75%; }
+
+        /* ticks verticais (marcas curtas na borda superior) */
+        .tick-v { height: 12px; width: 1px; top: 0; }
+        .tick-v:nth-child(4) { left: 20%; }
+        .tick-v:nth-child(5) { left: 40%; }
+        .tick-v:nth-child(6) { left: 60%; }
+        .tick-v:nth-child(7) { left: 80%; }
+
+        /* ---- Responsividade ---- */
+
+        /* tablet */
+        @media (max-width: 1024px) {
+            .hero-coord-grid .grid-lines { background-size: 25% 25%; }
+            .hero-coord-grid .coord-left span,
+            .hero-coord-grid .coord-top span,
+            .hero-coord-grid .coord-right span,
+            .hero-coord-grid .coord-bottom span { font-size: 9px; }
+        }
+
+        /* mobile */
+        @media (max-width: 768px) {
+            .hero-coord-grid .grid-lines { background-size: 33.33% 25%; }
+            .hero-coord-grid .coord-right,
+            .hero-coord-grid .coord-bottom { display: none; }
+            .hero-coord-grid .coord-left span:nth-child(even),
+            .hero-coord-grid .coord-top span:nth-child(even) { display: none; }
+            .hero-coord-grid .coord-left span,
+            .hero-coord-grid .coord-top span { font-size: 8px; color: rgba(255,255,255,0.14); }
+            .hero-coord-grid .grid-fade {
+                background: radial-gradient(ellipse 80% 70% at 50% 50%,
+                    rgba(11,61,46,0.60) 0%,
+                    rgba(11,61,46,0.25) 40%,
+                    transparent 70%);
+            }
+        }
+
+        /* mobile pequeno */
+        @media (max-width: 480px) {
+            .hero-coord-grid .grid-lines { background-size: 50% 33.33%; }
+            .hero-coord-grid .coord-left span:nth-child(3) { display: none; }
+            .hero-coord-grid .coord-top span:nth-child(3) { display: none; }
+            .hero-coord-grid .grid-ticks { display: none; }
+        }
+
+        /* ============================================
+           TESTIMONIALS
+           ============================================ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            padding: 32px;
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .testimonial-stars {
+            margin-bottom: 16px;
+            color: #F59E0B;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            margin-bottom: 20px;
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .testimonial-author strong {
+            color: var(--green-dark);
+            font-size: 0.92rem;
+        }
+
+        .testimonial-author span {
+            color: var(--gray-300);
+            font-size: 0.82rem;
+        }
+
+        /* ============================================
+           FORM SECTION
+           ============================================ */
+        .form-section {
+            background: var(--gray-50);
+        }
+
+        .form-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 36px;
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            color: var(--gray-700);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px 16px;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            background: var(--white);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--green-medium);
+            box-shadow: 0 0 0 3px rgba(26, 107, 74, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: var(--gray-300);
+        }
+
+        @media (max-width: 768px) {
+            .form-wrapper {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .form-text {
+                text-align: center;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo-horizontal.png" alt="CAD360 Topografia">
+            </div>
+            <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="topbar-cta" aria-label="WhatsApp CAD360">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                (32) 99831-2306
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-grid-pattern"></div>
+        <!-- Malha de coordenadas estilo georreferenciamento -->
+        <div class="hero-coord-grid" aria-hidden="true">
+            <!-- grade de linhas -->
+            <div class="grid-lines"></div>
+
+            <!-- fade central (ilha de proteção do conteúdo) -->
+            <div class="grid-fade"></div>
+
+            <!-- tick marks nas bordas -->
+            <div class="grid-ticks">
+                <div class="tick-h"></div>
+                <div class="tick-h"></div>
+                <div class="tick-h"></div>
+                <div class="tick-v"></div>
+                <div class="tick-v"></div>
+                <div class="tick-v"></div>
+                <div class="tick-v"></div>
+            </div>
+
+            <!-- coordenadas — Esquerda (Northing) -->
+            <div class="coord-left">
+                <span>N 7.619.740 m</span>
+                <span>N 7.619.470 m</span>
+                <span>N 7.618.930 m</span>
+                <span>N 7.618.660 m</span>
+                <span>N 7.618.390 m</span>
+            </div>
+
+            <!-- coordenadas — Topo (Easting) -->
+            <div class="coord-top">
+                <span>E 687.800 m</span>
+                <span>E 688.230 m</span>
+                <span>E 688.530 m</span>
+                <span>E 689.000 m</span>
+                <span>E 689.270 m</span>
+                <span>E 689.540 m</span>
+            </div>
+
+            <!-- coordenadas — Direita (Northing) -->
+            <div class="coord-right">
+                <span>N 7.619.740 m</span>
+                <span>N 7.619.470 m</span>
+                <span>N 7.618.930 m</span>
+                <span>N 7.618.660 m</span>
+                <span>N 7.618.390 m</span>
+            </div>
+
+            <!-- coordenadas — Inferior (Easting) -->
+            <div class="coord-bottom">
+                <span>E 687.800 m</span>
+                <span>E 688.230 m</span>
+                <span>E 688.530 m</span>
+                <span>E 689.000 m</span>
+                <span>E 689.270 m</span>
+                <span>E 689.540 m</span>
+            </div>
+        </div>
+        <!-- Fim: Malha de coordenadas -->
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-pill">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    13 anos de atua&ccedil;&atilde;o t&eacute;cnica em georreferenciamento
+                </div>
+                <h1>Regularize seu im&oacute;vel rural <span class="highlight">sem risco de devolu&ccedil;&atilde;o no cart&oacute;rio</span></h1>
+                <p>Documenta&ccedil;&atilde;o t&eacute;cnica feita para aprova&ccedil;&atilde;o de primeira &mdash; sem erro, sem retrabalho e sem perda de tempo.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Solicitar or&ccedil;amento pelo WhatsApp
+                    </a>
+                    <a href="#servicos" class="btn btn-secondary">Conhe&ccedil;a os servi&ccedil;os</a>
+                </div>
+                <div class="hero-microcopy" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px 20px;color:rgba(255,255,255,0.88);font-weight:600;font-size:0.9rem;max-width:560px;">
+                    <span>&#10004; Or&ccedil;amento gratuito</span>
+                    <span>&#10004; Atendimento direto</span>
+                    <span>&#10004; Juiz de Fora, Zona da Mata e MG</span>
+                </div>
+                <div class="hero-badges">
+                    <div class="badge-item"><div class="badge-icon">&#10003;</div> Execu&ccedil;&atilde;o completa: Do campo ao registro</div>
+                    <div class="badge-item"><div class="badge-icon">&#10003;</div> Tecnologia GNSS RTK de &uacute;ltima gera&ccedil;&atilde;o</div>
+                    <div class="badge-item"><div class="badge-icon">&#10003;</div> Regulariza&ccedil;&atilde;o completa: SIGEF, cart&oacute;rio e registro</div>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-card-title">N&uacute;meros que comprovam</div>
+                <div class="hero-metric">
+                    <div class="hero-metric-number">13<span>+</span></div>
+                    <div class="hero-metric-label">Anos de experi&ecirc;ncia exclusiva em topografia e georreferenciamento</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="hero-metric-number">30<span>+</span></div>
+                    <div class="hero-metric-label">Mais de 30 processos aprovados mensalmente no INCRA e Cart&oacute;rios</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="hero-metric-number">Revisado</div>
+                    <div class="hero-metric-label">Documentação estruturada desde o início para evitar exigências e manter o processo em andamento.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pain-section section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Aten&ccedil;&atilde;o</span>
+                <h2 class="section-title">Erros que travam seu processo no cart&oacute;rio</h2>
+                <p class="section-subtitle">Im&oacute;vel rural irregular trava o que mais pesa no bolso do propriet&aacute;rio: venda com registro, cr&eacute;dito banc&aacute;rio, uso em garantia, desmembramento e partilha.</p>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="pain-item-icon"><svg viewBox="0 0 24 24"><path d="M12 9v4"></path><path d="M12 17h.01"></path><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg></div>
+                    <div>
+                        <h3>Documentação mal estruturada</h3>
+                        <p>Erros, falta de documentos ou divergências fazem o processo voltar no cartório e travam o andamento.</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-item-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 13h8"></path><path d="M8 17h8"></path><path d="M8 9h2"></path></svg></div>
+                    <div>
+                        <h3>Processo sem condução técnica</h3>
+                        <p>Sem organização e sequência correta, cada etapa vira uma nova exigência e o processo não anda.</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></div>
+                    <div>
+                        <h3>Tempo perdido</h3>
+                        <p>Idas e voltas no cartório fazem o processo se arrastar sem previsão de conclusão.</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-item-icon"><svg viewBox="0 0 24 24"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H15a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                    <div>
+                        <h3>Dinheiro sem resultado</h3>
+                        <p>Você paga pelo serviço e o imóvel continua irregular, sem avanço real.</p>
+                    </div>
+                </div>
+            </div>
+            <p style="max-width:820px;margin:24px auto 32px;color:var(--gray-700);font-weight:700;text-align:center;font-size:1.02rem;line-height:1.7;">No im&oacute;vel rural, irregularidade documental n&atilde;o &eacute; detalhe: ela pode bloquear financiamento, dificultar a venda, impedir desmembramento e complicar heran&ccedil;a e partilha.</p>
+            <div class="pain-cta-box">
+                <p>Esses problemas s&atilde;o mais comuns do que parecem e todos podem ser <span>evitados com acompanhamento t&eacute;cnico desde o primeiro passo</span>.</p>
+                <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Fale com um especialista</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="services-section section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">O que fazemos</span>
+                <h2 class="section-title">Servi&ccedil;os de Alta Precis&atilde;o</h2>
+                <p class="section-subtitle">Solu&ccedil;&otilde;es completas para propriet&aacute;rios rurais, produtores, fazendeiros e profissionais que precisam de documenta&ccedil;&atilde;o t&eacute;cnica aprovada.</p>
+                <p style="max-width:820px;margin:18px auto 0;color:var(--gray-700);font-weight:600;text-align:center;">Regularizar um imóvel não é um único serviço — é um conjunto de etapas que precisam estar alinhadas.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                    <h3>Georreferenciamento Rural</h3>
+                    <p>Base técnica necessária para identificação correta do imóvel e atendimento às exigências legais.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path></svg></div>
+                    <h3>Levantamento Topográfico</h3>
+                    <p>Medição precisa do terreno que garante consistência na documentação e evita divergências.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 13h8"></path><path d="M8 17h8"></path><path d="M8 9h2"></path></svg></div>
+                    <h3>Planta e Memorial</h3>
+                    <p>Planta e memorial estruturados para que o processo avance sem exigências.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 21v-6h6v6"></path></svg></div>
+                    <h3>Regularização do Imóvel</h3>
+                    <p>Condução do processo do início ao registro, organizando cada etapa para evitar travas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"></path><path d="M16 7h6v6"></path></svg></div>
+                    <h3>Assessoria para Profissionais</h3>
+                    <p>Suporte na geração de planta, memorial e processos no SIGEF, garantindo agilidade e padrão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="authority-section section-padding">
+        <div class="container">
+            <div class="authority-grid">
+                <div class="authority-text">
+                    <span class="section-label">Quem est&aacute; por tr&aacute;s</span>
+                    <h2 class="section-title">Dom&iacute;nio t&eacute;cnico que faz diferen&ccedil;a no resultado</h2>
+                    <p style="text-align:justify;">Com mais de 13 anos de atua&ccedil;&atilde;o exclusiva em georreferenciamento e regulariza&ccedil;&atilde;o de im&oacute;veis rurais, a CAD360 Topografia n&atilde;o entrega apenas um servi&ccedil;o. Entrega seguran&ccedil;a t&eacute;cnica. Aqui, o trabalho &eacute; feito por quem conhece cada detalhe do processo, das exig&ecirc;ncias do INCRA &agrave;s particularidades de cada cart&oacute;rio.</p>
+                    <p style="text-align:justify;font-size:0.97rem;color:var(--gray-500);margin-bottom:18px;">Por que isso importa? Porque cada cart&oacute;rio tem exig&ecirc;ncias e interpreta&ccedil;&otilde;es diferentes. Experi&ecirc;ncia real significa menos exig&ecirc;ncias, menos retrabalho e aprova&ccedil;&atilde;o mais r&aacute;pida para voc&ecirc;.</p>
+                    <p style="font-weight:700;color:var(--gray-700);margin-bottom:18px;">Se outros profissionais procuram orienta&ccedil;&atilde;o aqui, voc&ecirc; j&aacute; est&aacute; no lugar certo.</p>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-number">13+</div>
+                            <div class="metric-label">Anos de profiss&atilde;o dedicados &agrave; topografia e ao georreferenciamento</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">30+</div>
+                            <div class="metric-label">Mais de 30 processos aprovados mensalmente no INCRA e Cart&oacute;rios</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">Revisado</div>
+                            <div class="metric-label">Documentação estruturada desde o início para evitar exigências e manter o processo em andamento.</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">360&deg;</div>
+                            <div class="metric-label">Vis&atilde;o completa do processo, do campo ao cart&oacute;rio</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="authority-features">
+                    <div class="authority-feature">
+                        <div class="authority-feature-icon"><svg viewBox="0 0 24 24"><path d="M3 12h18"/></svg></div>
+                        <div>
+                            <h3>Equipe Pr&oacute;pria de Campo e Escrit&oacute;rio</h3>
+                            <p>Sem terceiriza&ccedil;&atilde;o. Controle total de qualidade da medi&ccedil;&atilde;o ao documento final.</p>
+                        </div>
+                    </div>
+                    <div class="authority-feature">
+                        <div class="authority-feature-icon"><svg viewBox="0 0 24 24"><path d="M4 20l8-16 8 16"/></svg></div>
+                        <div>
+                            <h3>Do Marco ao Registro</h3>
+                            <p>Atuamos desde a marca&ccedil;&atilde;o em campo at&eacute; o registro final em cart&oacute;rio &mdash; sem lacunas no processo.</p>
+                        </div>
+                    </div>
+                    <div class="authority-feature">
+                        <div class="authority-feature-icon"><svg viewBox="0 0 24 24"><path d="m8 21 4-7 4 7"></path><path d="M12 14V3"></path><path d="M5 8c0 2 1.5 4 4 4"></path><path d="M19 8c0 2-1.5 4-4 4"></path></svg></div>
+                        <div>
+                            <h3>Refer&ecirc;ncia para outros profissionais</h3>
+                            <p>Engenheiros e agrimensores procuram a CAD360 para assessoria nos casos mais complexos. Isso diz muito sobre o n&iacute;vel t&eacute;cnico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-section section-padding">
+        <div class="container text-center">
+            <span class="section-label">Passo a passo</span>
+            <h2 class="section-title">Como funciona o processo</h2>
+            <p class="section-subtitle">Do primeiro contato &agrave; entrega final, de forma clara, organizada e sem complica&ccedil;&atilde;o para voc&ecirc;.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Contato inicial</h3>
+                    <p>Voc&ecirc; entra em contato pelo WhatsApp e recebe uma orienta&ccedil;&atilde;o inicial sobre seu caso.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>An&aacute;lise e documenta&ccedil;&atilde;o</h3>
+                    <p>Analisamos a matr&iacute;cula e orientamos sobre tudo que ser&aacute; necess&aacute;rio para o processo.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Execu&ccedil;&atilde;o t&eacute;cnica</h3>
+                    <p>Levantamento em campo e elabora&ccedil;&atilde;o de todas as pe&ccedil;as t&eacute;cnicas com precis&atilde;o.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Entrega e acompanhamento</h3>
+                    <p>Documenta&ccedil;&atilde;o completa entregue com acompanhamento at&eacute; a certifica&ccedil;&atilde;o final.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Depoimentos</span>
+                <h2 class="section-title">O que dizem nossos clientes</h2>
+                <p class="section-subtitle">Propriet&aacute;rios que resolveram a regulariza&ccedil;&atilde;o com a CAD360.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">&ldquo;J&aacute; tinha contratado outro profissional, mas cada ida ao cart&oacute;rio surgia uma nova exig&ecirc;ncia. Com a CAD360, a documenta&ccedil;&atilde;o foi organizada corretamente desde o in&iacute;cio e o processo foi aceito sem novas pend&ecirc;ncias.&rdquo;</p>
+                    <div class="testimonial-author">
+                        <strong>Roberto M.</strong>
+                        <span>Produtor rural &mdash; Zona da Mata, MG</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">&ldquo;Precisava do georreferenciamento para fazer o invent&aacute;rio do meu pai. O pessoal da CAD360 me orientou em tudo, desde os documentos at&eacute; o registro. Processo limpo e sem dor de cabe&ccedil;a.&rdquo;</p>
+                    <div class="testimonial-author">
+                        <strong>Marlene S.</strong>
+                        <span>Herdeira &mdash; Juiz de Fora, MG</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">&ldquo;Nos servi&ccedil;os que envolvem SIGEF, eu conto com a CAD360 de forma recorrente. Eles assumem a gera&ccedil;&atilde;o de planta e a organiza&ccedil;&atilde;o da documenta&ccedil;&atilde;o, o que garante padr&atilde;o e agilidade em todos os projetos.&rdquo;</p>
+                    <div class="testimonial-author">
+                        <strong>Carlos A.</strong>
+                        <span>Engenheiro civil &mdash; MG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section section-padding" id="formulario">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-text">
+                    <span class="section-label">Or&ccedil;amento gratuito</span>
+                    <h2 class="section-title">Prefere que a gente entre em contato?</h2>
+                    <p style="color:var(--gray-600);line-height:1.8;">Preencha o formul&aacute;rio e nossa equipe retorna pelo WhatsApp em at&eacute; 24 horas com uma orienta&ccedil;&atilde;o inicial sobre o seu caso.</p>
+                    <div style="margin-top:20px;color:var(--gray-600);font-size:0.9rem;">
+                        <div>&#10004;&nbsp;Sem compromisso</div>
+                        <div>&#10004;&nbsp;Orienta&ccedil;&atilde;o gratuita</div>
+                        <div>&#10004;&nbsp;Resposta em at&eacute; 24h</div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone / WhatsApp</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" placeholder="Ex: Juiz de Fora">
+                    </div>
+                    <div class="form-group">
+                        <label for="servico">Servi&ccedil;o de interesse</label>
+                        <select id="servico" name="servico">
+                            <option value="">Selecione...</option>
+                            <option value="certificacao-sigef">Certifica&ccedil;&atilde;o no SIGEF</option>
+                            <option value="retificacao">Retifica&ccedil;&atilde;o de &aacute;rea</option>
+                            <option value="desmembramento">Desmembramento</option>
+                            <option value="usucapiao">Usucapi&atilde;o</option>
+                            <option value="estremacao">Estrema&ccedil;&atilde;o</option>
+                            <option value="planialtimetrico">Planialim&eacute;trico</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Solicitar or&ccedil;amento gratuito</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final section-padding">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Resolva a regulariza&ccedil;&atilde;o do seu im&oacute;vel agora</h2>
+                <p>N&atilde;o deixe a documenta&ccedil;&atilde;o do seu im&oacute;vel parada. Fale com quem tem experi&ecirc;ncia para resolver de forma r&aacute;pida, segura e sem complica&ccedil;&atilde;o. O primeiro passo &eacute; simples: uma conversa no WhatsApp.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Or&ccedil;amento gratuito pelo WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo-vertical.png" alt="CAD360 Topografia">
+                    </div>
+                    <p>Especialistas em transformar medi&ccedil;&otilde;es t&eacute;cnicas em documentos aprovados. Engenharia de precis&atilde;o para o seu patrim&ocirc;nio rural. Atendimento em Juiz de Fora, Zona da Mata e Minas Gerais.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/cad360eng" target="_blank" rel="noopener noreferrer" class="social-link is-instagram" aria-label="Instagram CAD360">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="social-link is-whatsapp" aria-label="WhatsApp CAD360">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <a href="https://wa.me/5532998312306" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;fill:#FFFFFF;stroke:none;"> <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        (32) 99831-2306
+                    </a>
+                    <a href="https://instagram.com/cad360eng" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;fill:#FFFFFF;stroke:none;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        @cad360eng
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h4>Servi&ccedil;os</h4>
+                    <p>Regulariza&ccedil;&atilde;o de im&oacute;veis rurais</p>
+                    <p>Certifica&ccedil;&atilde;o no SIGEF</p>
+                    <p>Levantamento topogr&aacute;fico</p>
+                    <p>Assessoria t&eacute;cnica para profissionais</p>
+                </div>
+            </div>
+            <div class="footer-bottom">&copy; 2026 CAD360 Topografia. Todos os direitos reservados.</div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contato pelo WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const whatsappNumber = '5532998312306';
+        const messageBase = 'Olá, vim pelo site e gostaria de solicitar um orçamento.';
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Capturar valores dos campos
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const cidade = document.getElementById('cidade').value.trim();
+            const servico = document.getElementById('servico').value.trim();
+
+            // Validar campos obrigatórios
+            if (!nome || !telefone) {
+                alert('Por favor, preencha Nome e Telefone/WhatsApp.');
+                return;
+            }
+
+            // Montar mensagem formatada
+            let message = messageBase + '\n\n';
+            message += 'Nome: ' + nome + '\n';
+            message += 'Telefone: ' + telefone + '\n';
+            if (cidade) message += 'Cidade: ' + cidade + '\n';
+            if (servico) message += 'Serviço: ' + servico + '\n';
+
+            // Codificar e redirecionar para WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodedMessage;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>

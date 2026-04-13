@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD360 Topografia | Georreferenciamento e Regularização de Imóveis Rurais</title>
+    <meta name="description" content="Regularize seu imóvel rural sem dor de cabeça. Georreferenciamento, levantamento topográfico, planta, memorial descritivo e apoio técnico com 13 anos de experiência. Peça seu orçamento agora.">
+    <meta name="keywords" content="georreferenciamento, topografia, regularização de imóvel rural, memorial descritivo, planta topográfica, levantamento topográfico, CAD360">
+    <meta name="author" content="CAD360 Topografia">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           RESET E BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green-dark: #0B3D2E;
+            --green-medium: #1A6B4A;
+            --green-light: #22855C;
+            --green-accent: #2ECC71;
+            --green-soft: #E8F5EE;
+            --white: #FFFFFF;
+            --gray-50: #F8FAF9;
+            --gray-100: #F0F4F2;
+            --gray-200: #D1DBD6;
+            --gray-300: #A3B5AC;
+            --gray-600: #4A5E54;
+            --gray-700: #2D3E35;
+            --gray-800: #1A2A22;
+            --red-soft: #E74C3C;
+            --orange-soft: #F39C12;
+            --shadow-sm: 0 1px 3px rgba(11, 61, 46, 0.08);
+            --shadow-md: 0 4px 16px rgba(11, 61, 46, 0.10);
+            --shadow-lg: 0 8px 32px rgba(11, 61, 46, 0.12);
+            --shadow-xl: 0 16px 48px rgba(11, 61, 46, 0.16);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--gray-700);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ============================================
+           UTILITÁRIOS
+           ============================================ */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--green-medium);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 2px;
+            background: var(--green-accent);
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--green-dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 640px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           BOTÕES
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--green-accent);
+            color: var(--green-dark);
+            padding: 16px 36px;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 16px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--green-dark);
+            padding: 16px 36px;
+            font-size: 1.05rem;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.95);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 32px;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.7);
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           HEADER / BARRA SUPERIOR
+           ============================================ */
+        .topbar {
+            background: var(--green-dark);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 44px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand .logo img {
+            height: 80px;
+        }
+
+        .topbar-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--green-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .topbar-cta svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            background: linear-gradient(145deg, var(--green-dark) 0%, #0D4A35 50%, var(--green-medium) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Grid pattern overlay */
+        .hero-grid-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46, 204, 113, 0.12);
+            border: 1px solid rgba(46, 204, 113, 0.25);
+            color: var(--green-accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--green-accent);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 580px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--green-accent);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.55);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           SEÇÃO DE PROBLEMAS
+           ============================================ */
+        .problems {
+            background: var(--gray-50);
+        }
+
+        .problems-intro {
+            max-width: 680px;
+            margin: 0 auto 48px;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--gray-200);
+        }
+
+        .problem-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: #FEF2F2;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 6px;
+        }
+
+        .problem-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .problems-bottom {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            border-radius: var(--radius-lg);
+            padding: 36px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .problems-bottom p {
+            color: var(--white);
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            max-width: 560px;
+        }
+
+        .problems-bottom p span {
+            color: var(--green-accent);
+        }
+
+        /* ============================================
+           SEÇÃO DE BENEFÍCIOS
+           ============================================ */
+        .benefits {
+            background: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 32px 20px;
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: var(--green-soft);
+        }
+
+        .benefit-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--green-soft);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background: var(--white);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--green-dark);
+            margin-bottom: 8px;
+        }
+
+        .benefit-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           SEÇÃO DE SERVIÇOS
+           ============================================ */
+        .services {
+            background: var(--gray-50);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 36px 32px;
+            border: 1px solid var(--gray-100);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--green-medium), var(--green-accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--green-soft);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--green-dark);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           SEÇÃO DE AUTORIDADE
+           ============================================ */
+        .authority {
+            background: var(--white);
+            position: relative;
+        }
+
+        .authority-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .authority-text .section-label {
+            margin-bottom: 12px;
+        }
+
+        .authority-text .section-title {
+            font-size: 2rem;
+        }
+
+        .authority-text > p {
+            font-size: 1rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .authority-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .metric-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            border: 1px solid var(--gray-100);
+        }
+
+        .metric-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--green-dark);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .authority-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .authority-feature {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            border: 1px solid var(--gray-100);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .authority-feature-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .authority-feature h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--green-dark);
+            margin-bottom: 4px;
+        }
+
+        .authority-feature p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           SEÇÃO COMO FUNCIONA
+           ============================================ */
+        .how-it-works {
+            background: linear-gradient(170deg, var(--green-dark) 0%, #0D4A35 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .how-it-works .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .how-it-works .section-label {
+            color: var(--green-accent);
+        }
+
+        .how-it-works .section-label::before {
+            background: var(--green-accent);
+        }
+
+        .how-it-works .section-title {
+            color: var(--white);
+        }
+
+        .how-it-works .section-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(8px);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--green-accent);
+            color: var(--green-dark);
+            font-weight: 900;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        /* Connector line between steps */
+        .step-connector {
+            display: none;
+        }
+
+        /* ============================================
+           CTA FINAL
+           ============================================ */
+        .cta-final {
+            background: var(--gray-50);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-medium) 100%);
+            border-radius: var(--radius-xl);
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -60px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-box > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-box h2 {
+            font-size: 2.25rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 36px;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           RODAPÉ
+           ============================================ */
+        .footer {
+            background: var(--gray-800);
+            padding: 48px 0 32px;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 8px;
+            max-width: 320px;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--green-accent);
+        }
+
+        .footer-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.8rem;
+        }
+
+        /* ============================================
+           BOTÃO FLUTUANTE WHATSAPP
+           ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+            100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+        }
+
+        /* ============================================
+           RESPONSIVO
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .authority-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 48px 0 64px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                letter-spacing: -0.5px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.05rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                margin-bottom: 36px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+
+            .hero-stat-number {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problems-bottom {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px 24px;
+            }
+
+            .problems-bottom .btn {
+                width: 100%;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .benefit-card {
+                padding: 24px 16px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .authority-metrics {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
+            }
+
+            .cta-box h2 {
+                font-size: 1.6rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .topbar .container {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .whatsapp-float {
+                bottom: 16px;
+                right: 16px;
+                width: 54px;
+                height: 54px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .authority-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         BARRA SUPERIOR
+         ============================================ -->
+    <header class="topbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo-horizontal.png" alt="CAD360 Topografia - Georreferenciamento e Regularização de Imóveis Rurais">
+            </div>
+            <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="topbar-cta">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                (32) 99831-2306
+            </a>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section class="hero">
+        <div class="hero-grid-pattern"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    13 anos de atuação técnica em georreferenciamento
+                </div>
+
+                <h1>Regularize seu imóvel rural <span class="highlight">sem dor de cabeça</span> e sem voltar ao cartório</h1>
+
+                <p class="hero-subtitle">Georreferenciamento, planta, memorial descritivo e toda a documentação técnica necessária — feitos por quem entende do processo do início ao fim. Evite erros, retrabalho e burocracia desnecessária.</p>
+
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Solicitar orçamento pelo WhatsApp
+                    </a>
+                    <a href="#servicos" class="btn btn-outline">Conheça os serviços</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">13+</div>
+                        <div class="hero-stat-label">Anos de experiência</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">30+</div>
+                        <div class="hero-stat-label">Certificações por mês</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">100%</div>
+                        <div class="hero-stat-label">Foco em aprovação</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO DE PROBLEMAS
+         ============================================ -->
+    <section class="problems section-padding">
+        <div class="container">
+            <div class="problems-intro text-center">
+                <div class="section-label">Atenção</div>
+                <h2 class="section-title">Erros que travam seu processo no cartório</h2>
+                <p class="section-subtitle">A maioria dos problemas que impedem a regularização do seu imóvel poderia ser evitada com orientação técnica desde o início. Veja os mais comuns:</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <div>
+                        <h3>Memorial descritivo com erros</h3>
+                        <p>Informações incorretas ou inconsistentes que geram exigências do cartório e atrasam todo o processo de registro.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">📋</div>
+                    <div>
+                        <h3>Documentação incompleta</h3>
+                        <p>Falta de documentos essenciais que só são descobertos na hora do protocolo, gerando idas e vindas desnecessárias.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <div>
+                        <h3>Divergência entre documentos</h3>
+                        <p>Área, confrontantes ou descrições que não batem entre matrícula, planta e memorial — motivo frequente de nota devolutiva.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">✍️</div>
+                    <div>
+                        <h3>Falta de assinatura de confrontantes</h3>
+                        <p>Processo devolvido por não conter a anuência dos vizinhos, algo que precisa ser resolvido antes do protocolo.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⏳</div>
+                    <div>
+                        <h3>Perda de tempo com burocracia</h3>
+                        <p>Sem orientação técnica adequada, o processo se arrasta por meses sem previsão de conclusão.</p>
+                    </div>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <div>
+                        <h3>Gastar e o processo não andar</h3>
+                        <p>Investir em um serviço mal feito significa pagar duas vezes: pelo trabalho inicial e pelo retrabalho para corrigir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problems-bottom">
+                <p>Esses problemas são mais comuns do que parecem — e todos podem ser evitados com <span>acompanhamento técnico desde o primeiro passo</span>.</p>
+                <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Fale com um especialista</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO DE BENEFÍCIOS
+         ============================================ -->
+    <section class="benefits section-padding">
+        <div class="container text-center">
+            <div class="section-label">Benefícios</div>
+            <h2 class="section-title">Por que clientes escolhem a CAD360</h2>
+            <p class="section-subtitle">Cada etapa do processo é pensada para que seu imóvel seja regularizado com segurança, sem surpresas e sem retrabalho.</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Agilidade no processo</h3>
+                    <p>Documentação técnica organizada desde o início para evitar atrasos e exigências desnecessárias.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Segurança técnica</h3>
+                    <p>Levantamento e documentação feitos com precisão, seguindo todas as normas exigidas pelo INCRA e cartório.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Documentação correta</h3>
+                    <p>Memorial, planta e peças técnicas revisados e consistentes — prontos para aprovação sem correções.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📝</div>
+                    <h3>Menos burocracia</h3>
+                    <p>Orientação clara sobre o que precisa ser feito e em qual ordem, eliminando etapas desnecessárias.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Acompanhamento completo</h3>
+                    <p>Do levantamento em campo até a certificação final, com suporte e comunicação direta durante todo o processo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO DE SERVIÇOS
+         ============================================ -->
+    <section class="services section-padding" id="servicos">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label">Serviços</div>
+                <h2 class="section-title">Soluções técnicas para seu imóvel rural</h2>
+                <p class="section-subtitle">Serviços completos de topografia e georreferenciamento, executados com rigor técnico e foco na aprovação do seu processo.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Levantamento Topográfico</h3>
+                    <p>Medição precisa do terreno com equipamentos de alta performance, atendendo às especificações técnicas exigidas para registro e projetos.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🗺️</div>
+                    <h3>Georreferenciamento de Imóveis Rurais</h3>
+                    <p>Georreferenciamento conforme normas do INCRA, com certificação SIGEF, para que seu imóvel esteja em conformidade com a legislação vigente.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>Planta e Memorial Descritivo</h3>
+                    <p>Elaboração técnica da planta topográfica e memorial descritivo com dados consistentes e prontos para protocolo em cartório.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Regularização de Imóveis</h3>
+                    <p>Acompanhamento completo do processo de regularização, desde a análise documental até a averbação na matrícula do imóvel.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Apoio Técnico para Profissionais</h3>
+                    <p>Assessoria e suporte técnico para engenheiros, agrimensores e outros profissionais que precisam de orientação especializada em processos de certificação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO DE AUTORIDADE
+         ============================================ -->
+    <section class="authority section-padding">
+        <div class="container">
+            <div class="authority-wrapper">
+                <div class="authority-text">
+                    <div class="section-label">Quem está por trás</div>
+                    <h2 class="section-title">Domínio técnico que faz diferença no resultado</h2>
+                    <p>Com mais de 13 anos de atuação exclusiva em georreferenciamento e regularização de imóveis rurais, a CAD360 Topografia não entrega apenas um serviço — entrega segurança técnica. Aqui, o trabalho é feito por quem conhece cada detalhe do processo, das exigências do INCRA às particularidades de cada cartório.</p>
+
+                    <div class="authority-metrics">
+                        <div class="metric-card">
+                            <div class="metric-number">13+</div>
+                            <div class="metric-label">Anos de profissão dedicados a topografia e georreferenciamento</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">30+</div>
+                            <div class="metric-label">Certificações realizadas por mês na assessoria técnica</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">0%</div>
+                            <div class="metric-label">Tolerância a erro — cada peça técnica é revisada antes da entrega</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">360°</div>
+                            <div class="metric-label">Visão completa do processo, do campo ao cartório</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="authority-features">
+                    <div class="authority-feature">
+                        <div class="authority-feature-icon">🏆</div>
+                        <div>
+                            <h3>Referência para outros profissionais</h3>
+                            <p>Profissionais da área procuram a CAD360 para assessoria técnica em processos complexos. Quem ensina outros profissionais sabe exatamente o que está fazendo.</p>
+                        </div>
+                    </div>
+
+                    <div class="authority-feature">
+                        <div class="authority-feature-icon">🔍</div>
+                        <div>
+                            <h3>Não é só execução, é domínio técnico</h3>
+                            <p>Cada processo é analisado individualmente. O objetivo não é só fazer — é fazer certo de primeira, sem margem para devolutiva ou retrabalho.</p>
+                        </div>
+                    </div>
+
+                    <div class="authority-feature">
+                        <div class="authority-feature-icon">📊</div>
+                        <div>
+                            <h3>Volume que comprova consistência</h3>
+                            <p>Mais de 30 certificações mensais na assessoria técnica demonstram capacidade operacional e conhecimento consolidado de processos em diferentes regiões e cartórios.</p>
+                        </div>
+                    </div>
+
+                    <div class="authority-feature">
+                        <div class="authority-feature-icon">🎓</div>
+                        <div>
+                            <h3>Orientação documental completa</h3>
+                            <p>Antes de ir a campo, você recebe orientação clara sobre toda a documentação necessária, evitando surpresas e etapas desnecessárias no processo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SEÇÃO COMO FUNCIONA
+         ============================================ -->
+    <section class="how-it-works section-padding">
+        <div class="container text-center">
+            <div class="section-label">Passo a passo</div>
+            <h2 class="section-title">Como funciona o processo</h2>
+            <p class="section-subtitle">Do primeiro contato à entrega final — um processo claro, organizado e sem complicação para você.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Contato inicial</h3>
+                    <p>Você entra em contato pelo WhatsApp, explica sua necessidade e recebe uma orientação inicial sobre o seu caso.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Análise e documentação</h3>
+                    <p>Analisamos a matrícula, verificamos a documentação existente e orientamos sobre tudo que será necessário para o processo.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Execução técnica</h3>
+                    <p>Realizamos o levantamento em campo, processamos os dados e elaboramos todas as peças técnicas com precisão.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Entrega e acompanhamento</h3>
+                    <p>Entregamos a documentação completa e acompanhamos o processo até a certificação e protocolo no cartório.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA FINAL
+         ============================================ -->
+    <section class="cta-final section-padding">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Resolva a regularização do seu imóvel agora</h2>
+                <p>Não deixe a documentação do seu imóvel parada. Fale com quem tem experiência para resolver de forma rápida, segura e sem complicação. O primeiro passo é simples: uma conversa no WhatsApp.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Pedir orçamento pelo WhatsApp
+                    </a>
+                    <a href="https://instagram.com/cad360eng" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        Siga no Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         RODAPÉ
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo-vertical.png" alt="CAD360 Topografia">
+                    </div>
+                    <p>Georreferenciamento e regularização de imóveis rurais com 13 anos de experiência técnica comprovada.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        (32) 99831-2306
+                    </a>
+                    <a href="https://instagram.com/cad360eng" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        @cad360eng
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 CAD360 Topografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         BOTÃO FLUTUANTE WHATSAPP
+         ============================================ -->
+    <a href="https://wa.me/5532998312306?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20georreferenciamento%2Fregulariza%C3%A7%C3%A3o%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contato pelo WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+</body>
+</html>
