@@ -1,0 +1,1367 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georreferenciamento Rural em Juiz de Fora | CAD360 Engenharia</title>
+    <meta name="description" content="Regularize seu imóvel rural em Juiz de Fora. Georreferenciamento, SIGEF e suporte completo até o cartório.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cad360.com.br/juiz-de-fora/">
+    <meta property="og:title" content="Georreferenciamento Rural em Juiz de Fora | CAD360 Engenharia">
+    <meta property="og:description" content="Regularize seu imóvel rural em Juiz de Fora. Georreferenciamento, SIGEF e suporte completo até o cartório.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../og-image.png">
+    <meta name="google-site-verification" content="-QtnW2e-LjtrcHTAfKpT__Tvz2SHZbVf12tPxQQcsTw" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP9PR60WW3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LP9PR60WW3');
+        gtag('config', 'AW-18076525810');
+    </script>
+    <script>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wpzc50z4ax");
+    </script>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --green-dark: #0B3D2E;
+            --green-medium: #1A6B4A;
+            --green-light: #2ECC71;
+            --green-soft: #E8F5EE;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --gray-50: #F7FAF8;
+            --gray-100: #EAF1ED;
+            --gray-200: #D4E0D8;
+            --gray-500: #5A6D64;
+            --gray-700: #2E3D36;
+            --gray-900: #142019;
+            --danger: #C62828;
+            --warning: #B77A00;
+            --ok: #2E7D32;
+            --radius-sm: 10px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 26px;
+            --shadow-sm: 0 2px 10px rgba(11, 61, 46, 0.08);
+            --shadow-md: 0 8px 26px rgba(11, 61, 46, 0.12);
+            --shadow-lg: 0 14px 40px rgba(11, 61, 46, 0.16);
+            --urgency-height: 44px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--gray-700);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(1160px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .section { padding: 84px 0; }
+        .section-light { background: var(--gray-50); }
+        .section-dark { background: linear-gradient(155deg, var(--green-dark), #0f563d); color: var(--white); }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            color: var(--green-medium);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--green-light);
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+            color: var(--green-dark);
+            font-size: clamp(1.75rem, 4vw, 2.6rem);
+            font-weight: 900;
+            line-height: 1.15;
+        }
+
+        .section-dark .section-label { color: var(--green-light); }
+        .section-dark .section-label::before { background: var(--green-light); }
+        .section-dark .section-title { color: var(--white); }
+
+        .section-subtitle {
+            max-width: 760px;
+            color: var(--gray-500);
+            font-size: 1.06rem;
+            line-height: 1.75;
+        }
+
+        .section-dark .section-subtitle { color: rgba(255,255,255,0.78); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .btn-primary {
+            background: var(--green-light);
+            color: var(--green-dark);
+            box-shadow: 0 8px 24px rgba(46, 204, 113, .35);
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); background: #27bd66; }
+
+        .btn-dark {
+            background: var(--green-dark);
+            color: var(--white);
+        }
+
+        .btn-dark:hover { background: #092f24; transform: translateY(-2px); }
+
+        .ms {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 1.15em;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+            vertical-align: -3px;
+        }
+
+        .label-icon { margin-right: 8px; }
+        .logo-helper .ms,
+        .topbar-cta .ms,
+        .hero-pill .ms,
+        .hero-side h3 .ms,
+        .hero-side li strong .ms,
+        .card h3 .ms,
+        .sigef-item strong .ms,
+        .solution-item strong .ms,
+        .benefit-item strong .ms,
+        .prazo-note .ms,
+        .section-label .ms,
+        .cred-item strong .ms,
+        .timeline-item strong .ms,
+        .about-photo .ms,
+        .btn .ms {
+            margin-right: 8px;
+        }
+
+        .urgency-bar {
+            position: sticky;
+            top: 0;
+            z-index: 120;
+            background: var(--green-dark);
+            color: var(--white);
+            border-bottom: none;
+            height: var(--urgency-height);
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .urgency-bar p {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .urgency-bar .ms {
+            color: #F4C542;
+            font-size: 1.5em;
+            vertical-align: -4px;
+        }
+
+        .topbar {
+            position: sticky;
+            top: var(--urgency-height);
+            z-index: 110;
+            background: var(--green-dark);
+            backdrop-filter: none;
+            border-bottom: 1px solid rgba(0,0,0,0.18);
+            padding: 10px 0;
+        }
+
+        .topbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .logo-wrap img {
+            height: 42px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-helper {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .topbar-cta {
+            color: var(--green-light);
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 92px 0 98px;
+            background: linear-gradient(145deg, var(--green-dark) 0%, #0e513a 62%, #156045 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.1fr 420px;
+            gap: 52px;
+            align-items: center;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            margin-bottom: 22px;
+            padding: 8px 14px;
+            border: 1px solid rgba(46, 204, 113, 0.45);
+            border-radius: 999px;
+            color: var(--green-light);
+            background: rgba(46, 204, 113, 0.14);
+            font-size: .8rem;
+            font-weight: 800;
+        }
+
+        .hero h1 {
+            margin-bottom: 18px;
+            color: var(--white);
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight { color: var(--green-light); }
+
+        .hero p {
+            max-width: 700px;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.86);
+            font-size: 1.1rem;
+            line-height: 1.75;
+        }
+
+        .hero-quick {
+            margin-top: 12px;
+            color: rgba(255,255,255,0.88);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .hero-stats {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(120px, 1fr));
+            gap: 14px;
+        }
+
+        .hero-stat {
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .hero-stat strong {
+            display: block;
+            color: var(--green-light);
+            font-size: 1.5rem;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat span {
+            color: rgba(255,255,255,0.82);
+            font-size: .86rem;
+            line-height: 1.45;
+        }
+
+        .hero-side {
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-side h3 {
+            color: var(--green-light);
+            margin-bottom: 16px;
+            font-size: 1rem;
+            line-height: 1.45;
+        }
+
+        .hero-side ul { list-style: none; margin-bottom: 22px; display: grid; gap: 12px; }
+
+        .hero-side li {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            line-height: 1.45;
+            padding-left: 12px;
+            border-left: 2px solid rgba(255,255,255,0.25);
+        }
+
+        .hero-side li strong { display: block; margin-bottom: 3px; }
+
+        .hero-side li strong .ms {
+            font-size: 1.15em;
+            margin-right: 8px;
+            vertical-align: -3px;
+        }
+
+        .hero-grid-pattern {
+            display: none;
+        }
+
+        .hero-coord-grid {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-coord-grid .grid-lines {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+            background-size: 20% 25%;
+            background-position: 0 0;
+        }
+
+        .hero-coord-grid .grid-fade {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 80% at 50% 50%,
+                    rgba(11,61,46,0.50) 0%,
+                    rgba(11,61,46,0.20) 40%,
+                    transparent 72%);
+            pointer-events: none;
+        }
+
+        .hero-coord-grid .coord-left {
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4% 0;
+        }
+
+        .hero-coord-grid .coord-left span {
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(255,255,255,0.18);
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+        }
+
+        .hero-coord-grid .coord-top {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 4%;
+        }
+
+        .hero-coord-grid .coord-top span {
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(255,255,255,0.18);
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+        }
+
+        .hero-coord-grid .coord-right {
+            position: absolute;
+            right: 8px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4% 0;
+        }
+
+        .hero-coord-grid .coord-right span {
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(255,255,255,0.12);
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .hero-coord-grid .coord-bottom {
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 4%;
+        }
+
+        .hero-coord-grid .coord-bottom span {
+            font-size: 10px;
+            line-height: 1;
+            color: rgba(255,255,255,0.12);
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+        }
+
+        .hero-coord-grid .grid-ticks {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-coord-grid .grid-ticks .tick-h,
+        .hero-coord-grid .grid-ticks .tick-v {
+            position: absolute;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .tick-h { width: 12px; height: 1px; left: 0; }
+        .tick-h:nth-child(1) { top: 25%; }
+        .tick-h:nth-child(2) { top: 50%; }
+        .tick-h:nth-child(3) { top: 75%; }
+
+        .tick-v { height: 12px; width: 1px; top: 0; }
+        .tick-v:nth-child(4) { left: 20%; }
+        .tick-v:nth-child(5) { left: 40%; }
+        .tick-v:nth-child(6) { left: 60%; }
+        .tick-v:nth-child(7) { left: 80%; }
+
+        @media (max-width: 1024px) {
+            .hero-coord-grid .grid-lines { background-size: 25% 25%; }
+            .hero-coord-grid .coord-left span,
+            .hero-coord-grid .coord-top span,
+            .hero-coord-grid .coord-right span,
+            .hero-coord-grid .coord-bottom span { font-size: 9px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-coord-grid .grid-lines { background-size: 33.33% 25%; }
+            .hero-coord-grid .coord-right,
+            .hero-coord-grid .coord-bottom { display: none; }
+            .hero-coord-grid .coord-left span:nth-child(even),
+            .hero-coord-grid .coord-top span:nth-child(even) { display: none; }
+            .hero-coord-grid .coord-left span,
+            .hero-coord-grid .coord-top span { font-size: 8px; color: rgba(255,255,255,0.14); }
+            .hero-coord-grid .grid-fade {
+                background: radial-gradient(ellipse 80% 70% at 50% 50%,
+                    rgba(11,61,46,0.60) 0%,
+                    rgba(11,61,46,0.25) 40%,
+                    transparent 70%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-coord-grid .grid-lines { background-size: 50% 33.33%; }
+            .hero-coord-grid .coord-left span:nth-child(3) { display: none; }
+            .hero-coord-grid .coord-top span:nth-child(3) { display: none; }
+            .hero-coord-grid .grid-ticks { display: none; }
+        }
+
+        .cards-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .card {
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card h3 {
+            color: var(--gray-900);
+            margin-bottom: 8px;
+            font-size: 1.03rem;
+            line-height: 1.35;
+        }
+
+        .card p { color: var(--gray-500); font-size: .94rem; line-height: 1.65; }
+
+        .sigef-grid,
+        .benefits-grid,
+        .about-grid,
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 30px;
+            margin-top: 28px;
+        }
+
+        .sigef-box,
+        .prazo-box {
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            background: linear-gradient(145deg, var(--green-dark), #12533d);
+            color: var(--white);
+        }
+
+        .sigef-box strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--green-light);
+            font-size: 3rem;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .sigef-list,
+        .benefit-list,
+        .solution-list,
+        .cred-grid,
+        .faq-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .sigef-item,
+        .benefit-item,
+        .solution-item,
+        .cred-item {
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            background: var(--white);
+        }
+
+        .sigef-item strong,
+        .benefit-item strong,
+        .solution-item strong,
+        .cred-item strong {
+            display: block;
+            color: var(--gray-900);
+            margin-bottom: 5px;
+        }
+
+        .sigef-item p,
+        .benefit-item p,
+        .solution-item p,
+        .cred-item p {
+            color: var(--gray-500);
+            font-size: .92rem;
+            line-height: 1.62;
+        }
+
+        .solution-list { margin-top: 28px; }
+        .solution-item { display: flex; gap: 14px; }
+        .solution-num {
+            min-width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--green-soft);
+            color: var(--green-medium);
+            font-weight: 900;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .prazo-box .section-label { color: var(--green-light); margin-bottom: 10px; }
+        .prazo-box .section-label::before { background: var(--green-light); }
+
+        .prazo-note {
+            margin-top: 14px;
+            font-size: 0.86rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.82);
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 12px;
+        }
+
+        .steps {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0,1fr));
+            gap: 14px;
+        }
+
+        .step {
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,.16);
+            background: rgba(255,255,255,.06);
+            padding: 22px;
+        }
+
+        .step strong {
+            display: block;
+            color: var(--green-light);
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .step h3 { color: var(--white); margin-bottom: 8px; font-size: .98rem; }
+        .step p { color: rgba(255,255,255,0.76); font-size: .9rem; }
+
+        .about-card {
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .about-name {
+            color: var(--green-dark);
+            font-size: 1.45rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .about-role { color: var(--gray-500); font-weight: 700; margin-bottom: 14px; }
+
+        .about-quote {
+            margin: 14px 0;
+            border: 1px solid rgba(212, 175, 55, .5);
+            border-radius: var(--radius-md);
+            background: #fffaf0;
+            padding: 14px;
+            color: #6a4a00;
+            font-weight: 700;
+            font-size: .95rem;
+        }
+
+        .about-photo {
+            position: relative;
+            border: 2px dashed var(--gray-200);
+            border-radius: var(--radius-lg);
+            min-height: 320px;
+            background: linear-gradient(145deg, #f4f8f6, #ebf2ee);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-weight: 700;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gold-badge {
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            z-index: 2;
+            width: 108px;
+            height: 108px;
+            border-radius: 50%;
+            border: 3px solid #f5d777;
+            background: radial-gradient(circle at 35% 30%, #fbe7a5, var(--gold));
+            color: #5d4300;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 900;
+            line-height: 1.15;
+            font-size: .84rem;
+            box-shadow: 0 8px 22px rgba(212,175,55,0.35);
+        }
+
+        .timeline-list {
+            margin-top: 24px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--green-light);
+            padding: 10px 0 10px 14px;
+            background: var(--white);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .metrics-2x2 {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .metric {
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            padding: 18px;
+        }
+
+        .metric strong {
+            display: block;
+            color: var(--green-dark);
+            font-size: 1.65rem;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .faq {
+            margin-top: 26px;
+            display: grid;
+            gap: 10px;
+        }
+
+        details {
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 14px 16px;
+            background: var(--white);
+        }
+
+        summary {
+            cursor: pointer;
+            color: var(--gray-900);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        details p {
+            margin-top: 10px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            font-size: .94rem;
+        }
+
+        .cta-final {
+            text-align: center;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(145deg, var(--green-dark), #10563e);
+            padding: 58px 28px;
+            color: var(--white);
+        }
+
+        .cta-final h2 {
+            margin: 12px auto 14px;
+            max-width: 760px;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.15;
+        }
+
+        .cta-final p {
+            max-width: 780px;
+            margin: 0 auto 28px;
+            color: rgba(255,255,255,.82);
+            font-size: 1.04rem;
+            line-height: 1.72;
+        }
+
+        .cta-meta {
+            margin-top: 12px;
+            color: rgba(255,255,255,.85);
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 84px;
+            padding: 38px 0;
+            border-top: 1px solid var(--gray-100);
+            color: var(--gray-500);
+            text-align: center;
+            font-size: .9rem;
+            line-height: 1.8;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 28px rgba(37,211,102,.42);
+            transition: .25s ease;
+        }
+
+        .whatsapp-float:hover { transform: translateY(-2px) scale(1.03); }
+        .whatsapp-float svg { width: 30px; height: 30px; fill: currentColor; }
+
+        @media (max-width: 1100px) {
+            .hero-grid,
+            .sigef-grid,
+            .benefits-grid,
+            .about-grid,
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-side { display: none; }
+            .steps { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            :root { --urgency-height: 34px; }
+            .section { padding: 62px 0; }
+
+            .urgency-bar {
+                height: 34px;
+                min-height: 34px;
+                padding: 0;
+            }
+
+            .urgency-bar .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+
+            .urgency-bar p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                width: 100%;
+                font-size: 0;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: clip;
+                line-height: 1;
+            }
+
+            .urgency-bar p .ms {
+                font-size: 1.08rem;
+                flex: 0 0 auto;
+                margin-right: 0;
+                vertical-align: 0;
+            }
+
+            .urgency-bar p::after {
+                content: "Prazo SIGEF 2029: antecipe seu georreferenciamento";
+                display: inline-block;
+                font-family: 'Inter', sans-serif;
+                font-size: clamp(.68rem, 3vw, .8rem);
+                font-weight: 800;
+                line-height: 1;
+                white-space: nowrap;
+                transform: scaleY(1.16);
+                transform-origin: center;
+            }
+
+            .topbar {
+                padding: 6px 0;
+            }
+
+            .topbar .container {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .logo-wrap {
+                display: none;
+            }
+
+            .topbar-cta {
+                font-size: .86rem;
+                line-height: 1;
+            }
+
+            .topbar-cta .ms {
+                display: none;
+            }
+
+            .hero { padding: 72px 0 74px; }
+            .hero-stats, .cards-2, .metrics-2x2, .steps { grid-template-columns: 1fr; }
+            .hero p { font-size: 1rem; }
+            .whatsapp-float { right: 16px; bottom: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="urgency-bar">
+        <div class="container">
+            <p><span class="ms label-icon">warning</span>Prazo SIGEF novembro de 2029: imóvel sem georreferenciamento aprovado fica impedido de qualquer transação registral. Não espere a fila crescer.</p>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <div class="container">
+            <div class="logo-wrap">
+                <img src="../logo-horizontal.png" alt="CAD360 Topografia">
+                <div class="logo-helper"><span class="ms label-icon">distance</span>Juiz de Fora e região · Zona da Mata Mineira</div>
+            </div>
+            <a class="topbar-cta" href="https://wa.me/5532998312306?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20georreferenciamento." target="_blank" rel="noopener noreferrer"><span class="ms label-icon">chat</span>Solicitar Orçamento</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-grid-pattern"></div>
+        <div class="hero-coord-grid" aria-hidden="true">
+            <div class="grid-lines"></div>
+            <div class="grid-fade"></div>
+            <div class="grid-ticks">
+                <div class="tick-h"></div>
+                <div class="tick-h"></div>
+                <div class="tick-h"></div>
+                <div class="tick-v"></div>
+                <div class="tick-v"></div>
+                <div class="tick-v"></div>
+                <div class="tick-v"></div>
+            </div>
+            <div class="coord-left">
+                <span>N 7.619.740 m</span>
+                <span>N 7.619.470 m</span>
+                <span>N 7.618.930 m</span>
+                <span>N 7.618.660 m</span>
+                <span>N 7.618.390 m</span>
+            </div>
+            <div class="coord-top">
+                <span>E 687.800 m</span>
+                <span>E 688.230 m</span>
+                <span>E 688.530 m</span>
+                <span>E 689.000 m</span>
+                <span>E 689.270 m</span>
+                <span>E 689.540 m</span>
+            </div>
+            <div class="coord-right">
+                <span>N 7.619.740 m</span>
+                <span>N 7.619.470 m</span>
+                <span>N 7.618.930 m</span>
+                <span>N 7.618.660 m</span>
+                <span>N 7.618.390 m</span>
+            </div>
+            <div class="coord-bottom">
+                <span>E 687.800 m</span>
+                <span>E 688.230 m</span>
+                <span>E 688.530 m</span>
+                <span>E 689.000 m</span>
+                <span>E 689.270 m</span>
+                <span>E 689.540 m</span>
+            </div>
+        </div>
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-pill"><span class="ms label-icon">verified</span>Felipe Cremonese — 13 anos de experiência | Referência técnica em Juiz de Fora e região</div>
+                <h1>Seu imóvel em Juiz de Fora está com <span class="highlight">Matrícula Irregular?</span></h1>
+                <p>A CAD360 resolve o georreferenciamento do início ao fim — do campo ao cartório de JF, sem retrabalho.</p>
+                <a class="btn btn-primary" href="https://wa.me/5532998312306?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20georreferenciamento." target="_blank" rel="noopener noreferrer"><span class="ms">chat</span>Solicitar Orçamento pelo WhatsApp</a>
+                <div class="hero-quick">Atendimento rápido · Orçamento sem compromisso</div>
+                <div class="hero-stats">
+                    <div class="hero-stat"><strong>13+</strong><span>Anos no mercado</span></div>
+                    <div class="hero-stat"><strong>2013</strong><span>Fundação da CAD360</span></div>
+                    <div class="hero-stat"><strong>100%</strong><span>Aprovados no INCRA</span></div>
+                </div>
+            </div>
+
+            <aside class="hero-side">
+                <h3><span class="ms label-icon">warning</span>Seu imóvel precisa de regularização se...</h3>
+                <ul>
+                    <li><strong><span class="ms">gavel</span>Imóvel travado no cartório</strong>Impossível vender, transferir ou financiar sem georreferenciamento aprovado no INCRA.</li>
+                    <li><strong><span class="ms">schedule</span>Prazo SIGEF 2029 se aproximando</strong>Evite enfrentar profissionais com agenda cheia, cartórios mais lentos e custos maiores na regularização do imóvel.</li>
+                    <li><strong><span class="ms">cancel</span>Serviço anterior não aprovado no órgão regulador</strong>Já contratou antes e o trabalho não foi aceito? A CAD360 resolve casos complexos com metodologia que não gera rejeição.</li>
+                </ul>
+                
+                <a class="btn btn-primary" href="https://wa.me/5532998312306?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20georreferenciamento." target="_blank" rel="noopener noreferrer"><span class="ms">support_agent</span>Falar com Especialista</a>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <span class="section-label"><span class="ms label-icon">report</span>A realidade do imóvel irregular</span>
+            <h2 class="section-title">Imóvel sem georreferenciamento?<br>Os riscos são maiores do que você imagina.</h2>
+            <p class="section-subtitle">Muitos proprietários só descobrem o problema quando precisam vender, financiar ou deixar a terra para os filhos. Nessa hora, um imóvel sem geo pode travar tudo — e o prejuízo é seu.</p>
+            <div class="cards-2">
+                <article class="card">
+                    <h3><span class="ms label-icon">gavel</span>Proibido de vender ou transferir</h3>
+                    <p>Sem geo aprovado no INCRA, o cartório não registra venda, doação, desmembramento ou herança. Sua terra fica presa legalmente.</p>
+                </article>
+                <article class="card">
+                    <h3><span class="ms label-icon">payments</span>Crédito rural negado</h3>
+                    <p>Bancos e cooperativas exigem documentação regularizada para Pronaf, financiamento de safra e maquinário. Sem geo, sem crédito.</p>
+                </article>
+                <article class="card">
+                    <h3><span class="ms label-icon">warning</span>Brigas de divisa com vizinhos</h3>
+                    <p>Limites imprecisos são a principal causa de conflitos entre propriedades. Um metro a mais ou a menos pode virar processo judicial de anos.</p>
+                </article>
+                <article class="card">
+                    <h3><span class="ms label-icon">groups</span>Problemas no inventário e herança</h3>
+                    <p>Para partilhar ou desmembrar a terra entre herdeiros, o georreferenciamento é obrigatório por lei. Sem ele, o inventário trava.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <span class="section-label"><span class="ms label-icon">calendar_month</span>Prazo Legal SIGEF</span>
+            <h2 class="section-title">O relógio está correndo: SIGEF — novembro de 2029</h2>
+            <div class="sigef-grid">
+                <div>
+                    <p class="section-subtitle" style="max-width:none;margin-bottom:14px;">O INCRA determinou que todos os imóveis rurais precisarão ter o georreferenciamento aprovado no sistema SIGEF. Quem não regularizar ficará impedido de realizar qualquer ato registral — venda, desmembramento, partilha, doação.</p>
+                    <p class="section-subtitle" style="max-width:none;">Não espere a fila crescer. Com a aproximação do prazo, profissionais habilitados ficam sobrecarregados e os preços sobem. Quem age agora resolve com tranquilidade e paga menos.</p>
+                    <div class="sigef-box" style="margin-top:18px;">
+                        <strong>2029</strong>
+                        <p style="font-weight:700;margin-bottom:8px;">Prazo final obrigatório do SIGEF</p>
+                        <p style="color:rgba(255,255,255,0.83);">Cada mês de espera é um risco a mais para o seu patrimônio e para a sua capacidade de negociar a terra.</p>
+                    </div>
+                </div>
+                <div class="sigef-list">
+                    <div class="sigef-item">
+                        <strong><span class="ms label-icon">close</span>Demanda crescente, prazo maior.</strong>
+                        <p>À medida que 2029 se aproxima, a fila de serviços cresce e o tempo de espera aumenta.</p>
+                    </div>
+                    <div class="sigef-item">
+                        <strong><span class="ms label-icon">close</span>Preço mais alto.</strong>
+                        <p>Com a procura em alta, os valores tendem a subir. Quem age hoje paga menos.</p>
+                    </div>
+                    <div class="sigef-item">
+                        <strong><span class="ms label-icon">close</span>Imóvel desvalorizado.</strong>
+                        <p>Compradores exigem documentação em dia. Imóvel irregular vende por menos — quando consegue vender.</p>
+                    </div>
+                    <div class="sigef-item" style="border-color:#cae9d8;background:#f7fffb;">
+                        <strong><span class="ms label-icon">check</span>Quem regulariza agora</strong>
+                        <p>Tem tranquilidade, documentação aprovada e pode vender, financiar ou transferir quando quiser.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <span class="section-label"><span class="ms label-icon">verified</span>A solução CAD360</span>
+            <h2 class="section-title">Precisão de quem forma outros profissionais.<br>Dados que não voltam do INCRA.</h2>
+            <p class="section-subtitle">A CAD360 não entrega apenas "pontos no mapa". Entregamos consistência técnica do campo ao processamento — e orientamos toda a documentação para que o processo não trave em nenhuma etapa.</p>
+
+            <div class="solution-list">
+                <div class="solution-item">
+                    <span class="solution-num">01</span>
+                    <div>
+                        <strong><span class="ms label-icon">satellite_alt</span>Equipamentos GNSS de Ponta</strong>
+                        <p>Trabalhamos com os melhores equipamentos GPS profissional disponíveis no mercado. Precisão centimétrica que garante dados consistentes desde o campo até o processamento — sem rejeição no SIGEF.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <span class="solution-num">02</span>
+                    <div>
+                        <strong><span class="ms label-icon">description</span>Orientação Documental Completa</strong>
+                        <p>Orientamos toda a documentação necessária antes, durante e após o serviço — evitando erros que atrasam ou inviabilizam o processo. Você não precisa correr atrás de nada sozinho.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <span class="solution-num">03</span>
+                    <div>
+                        <strong><span class="ms label-icon">target</span>Planejamento que Elimina Retrabalho</strong>
+                        <p>O planejamento prévio das coletas reduz idas desnecessárias ao campo. Integração direta entre levantamento e produção técnica — sem perda de informação, sem inconsistências no processamento.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <span class="solution-num">04</span>
+                    <div>
+                        <strong><span class="ms label-icon">workspace_premium</span>Resolve o que Outros Não Conseguem</strong>
+                        <p>Com 13 anos de mercado e assessoria ativa para outros topógrafos, a CAD360 resolve casos complexos: sobreposições, divergências de matrícula e imóveis com histórico problemático.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <span class="section-label"><span class="ms label-icon">trending_up</span>Valor para o seu patrimônio</span>
+            <h2 class="section-title">Georreferenciamento não é um custo.<br>É um investimento no que você levou a vida construindo.</h2>
+            <div class="benefits-grid">
+                <div class="benefit-list">
+                    <div class="benefit-item">
+                        <strong><span class="ms label-icon">check</span>Seu imóvel vale mais no mercado</strong>
+                        <p>Propriedade regularizada é mais valorizada e se vende mais rápido. Comprador paga mais por segurança jurídica — e exige geo antes de fechar qualquer negócio.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <strong><span class="ms label-icon">check</span>Divisa definida com precisão</strong>
+                        <p>Os limites exatos da sua propriedade ficam registrados e aprovados pelo INCRA. Chega de discussão com vizinhos sobre onde começa e termina a sua terra.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <strong><span class="ms label-icon">check</span>Acesso a crédito rural facilitado</strong>
+                        <p>Com o geo aprovado, você desbloqueia Pronaf, financiamento de safra, aquisição de maquinário e crédito fundiário — sem a documentação travando na burocracia.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <strong><span class="ms label-icon">check</span>Herança organizada para os filhos</strong>
+                        <p>Com a documentação em dia, a partilha é simples e sem conflito. O trabalho de uma vida inteira fica protegido e bem encaminhado para a próxima geração.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <strong><span class="ms label-icon">check</span>Dados que não voltam do cartório</strong>
+                        <p>Levantamento consistente e metodologia padronizada garantem que o processo sai direto — sem devoluções, sem revisões, sem custo extra de retrabalho.</p>
+                    </div>
+                </div>
+                <aside class="prazo-box">
+                    <span class="section-label"><span class="ms label-icon">schedule</span>Prazo de entrega</span>
+                    <h3 style="font-size:1.42rem;line-height:1.25;margin-bottom:10px;">Documentação completa = trabalho entregue no menor prazo do mercado</h3>
+                    <p style="color:rgba(255,255,255,.85);">Com planejamento prévio e integração direta entre campo e escritório, a CAD360 consegue prazos muito menores do que a média do setor — sem abrir mão da precisão que o INCRA exige.</p>
+                    <p class="prazo-note"><span class="ms label-icon">info</span>Nota: o prazo de entrega depende diretamente da documentação fornecida pelo cliente. Quanto mais completa e organizada, mais ágil o processo. Entre em contato para saber o prazo estimado do seu imóvel.</p>
+                    <a class="btn btn-primary" style="margin-top:16px;" href="https://wa.me/5532998312306?text=Ol%C3%A1!%20Quero%20consultar%20o%20prazo%20de%20entrega%20para%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer"><span class="ms">schedule</span>Consultar prazo para meu imóvel</a>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <span class="section-label"><span class="ms label-icon">format_list_numbered</span>Como funciona</span>
+            <h2 class="section-title">Do primeiro contato à aprovação no INCRA</h2>
+            <p class="section-subtitle">Processo transparente, sem surpresas e com acompanhamento em cada etapa.</p>
+            <div class="steps">
+                <article class="step">
+                    <strong>1 —</strong>
+                    <h3>Contato e Orçamento</h3>
+                    <p>Você entra em contato pelo WhatsApp. Avaliamos o imóvel e enviamos o orçamento sem compromisso.</p>
+                </article>
+                <article class="step">
+                    <strong>2 —</strong>
+                    <h3>Documentação</h3>
+                    <p>Orientamos exatamente quais documentos reunir. Você entrega organizado e a gente cuida do restante.</p>
+                </article>
+                <article class="step">
+                    <strong>3 —</strong>
+                    <h3>Levantamento em Campo</h3>
+                    <p>Nossa equipe vai até o imóvel com equipamento GNSS profissional e realiza o levantamento com precisão centimétrica.</p>
+                </article>
+                <article class="step">
+                    <strong>4 —</strong>
+                    <h3>Entrega e Aprovação INCRA</h3>
+                    <p>Você recebe o laudo técnico e acompanhamos a certificação no SIGEF até a aprovação final.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <span class="section-label"><span class="ms label-icon">engineering</span>Quem executa o seu serviço</span>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h2 class="about-name">Felipe Cremonese</h2>
+                    <p class="about-role">— o especialista que outros especialistas consultam</p>
+                    <p class="about-role" style="font-weight:600;">Especialista em Georreferenciamento · Fundador da CAD360</p>
+                    <p>Felipe tem mais de 13 anos de atuação no mercado de topografia e georreferenciamento — e chegou a um nível que poucos profissionais atingem: outros topógrafos contratam a sua assessoria técnica para resolver casos que eles mesmos não conseguem executar.</p>
+                    <div class="about-quote">"Quando um topógrafo esbarra em um caso complexo, liga para o Felipe. Isso diz tudo sobre o nível técnico que a CAD360 entrega para cada cliente."</div>
+                    <p>Ao contratar a CAD360, você não contrata um serviço comum de mercado. Você contrata o profissional que resolve os problemas que os outros deixam para trás — com planejamento, equipamento de ponta e metodologia que garante aprovação no INCRA.</p>
+                    <div class="cred-grid" style="margin-top:14px;grid-template-columns:repeat(2,minmax(0,1fr));">
+                        <div class="cred-item"><strong><span class="ms label-icon">satellite_alt</span>Especialista GNSS / GPS</strong></div>
+                        <div class="cred-item"><strong><span class="ms label-icon">workspace_premium</span>Assessor de outros topógrafos</strong></div>
+                        <div class="cred-item"><strong><span class="ms label-icon">check_circle</span>100% aprovados no INCRA</strong></div>
+                        <div class="cred-item"><strong><span class="ms label-icon">distance</span>Juiz de Fora e Zona da Mata Mineira</strong></div>
+                    </div>
+                </div>
+                <div class="about-photo">
+                    <img src="../foto.png" alt="Felipe Cremonese">
+                    <div class="gold-badge">13 anos<br>de mercado</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <span class="section-label"><span class="ms label-icon">apartment</span>A empresa</span>
+            <h2 class="section-title">CAD360 — topografia e georreferenciamento desde 2013</h2>
+            <p class="section-subtitle">Nascemos da necessidade que o próprio mercado criou: topógrafos que precisavam de assessoria técnica qualificada. Hoje atendemos o cliente final com o mesmo padrão exigente que usamos para assessorar profissionais.</p>
+            <div class="timeline-grid">
+                <div>
+                    <div class="timeline-list">
+                        <div class="timeline-item"><strong><span class="ms label-icon">eco</span>2013 — Fundação</strong><p>CAD360 inicia operações com foco em assessoria técnica para topógrafos e levantamentos de alta precisão em todo território nacional.</p></div>
+                        <div class="timeline-item"><strong><span class="ms label-icon">satellite_alt</span>Investimento tecnológico</strong><p>Adoção dos melhores equipamentos GNSS do mercado, garantindo precisão centimétrica e dados consistentes do campo ao escritório.</p></div>
+                        <div class="timeline-item"><strong><span class="ms label-icon">workspace_premium</span>Referência regional e nacional</strong><p>Felipe torna-se referência técnica em Juiz de Fora e na Zona da Mata — consultado por outros topógrafos para resolver casos complexos que outros não conseguem.</p></div>
+                        <div class="timeline-item"><strong><span class="ms label-icon">track_changes</span>Atendimento ao cliente final</strong><p>A CAD360 passa a atender diretamente proprietários rurais, levando o mesmo padrão técnico ao produtor e ao homem do campo.</p></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="metrics-2x2">
+                        <div class="metric"><strong>13+</strong><p>Anos de mercado</p></div>
+                        <div class="metric"><strong>300km</strong><p>Raio de atendimento</p></div>
+                        <div class="metric"><strong>100%</strong><p>Aprovação INCRA</p></div>
+                        <div class="metric"><strong>Nacional</strong><p>Abrangência</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <span class="section-label"><span class="ms label-icon">help</span>Dúvidas frequentes</span>
+            <h2 class="section-title">Perguntas que todo proprietário faz</h2>
+            <p class="section-subtitle">Respostas diretas para você entender o que está em jogo e o que precisa ser feito.</p>
+            <div class="faq">
+                <details><summary>O que é georreferenciamento e para que serve?</summary><p>É o processo de levantamento e registro das coordenadas exatas dos limites e área de um imóvel rural com GPS de alta precisão (GNSS). O resultado é certificado pelo INCRA no sistema SIGEF e vinculado à matrícula do imóvel. Sem ele, o imóvel não pode ser vendido, desmembrado, partilhado ou usado como garantia em financiamentos.</p></details>
+                <details><summary>O georreferenciamento é realmente obrigatório?</summary><p>Sim. É obrigatório para qualquer transação registral: venda, doação, desmembramento, partilha de herança. E o prazo SIGEF de novembro de 2029 tornará a regularização obrigatória para todos os imóveis rurais, independentemente de transação.</p></details>
+                <details><summary>O que é o SIGEF e por que ele importa?</summary><p>O SIGEF (Sistema de Gestão Fundiária) é a plataforma oficial do INCRA para certificação de imóveis rurais georreferenciados. A aprovação no SIGEF é o que dá validade legal ao serviço. Na CAD360, acompanhamos todo o processo até a certificação final.</p></details>
+                <details><summary>Por que contratar a CAD360 e não outro profissional?</summary><p>A diferença está na experiência, metodologia e equipamento. Com 13 anos de mercado e consultoria ativa para outros topógrafos, a CAD360 entrega dados consistentes que não geram rejeição no INCRA. Um trabalho mal feito pode ser rejeitado, gerando retrabalho e custo extra para o proprietário.</p></details>
+                <details><summary>Qual o prazo de entrega do serviço?</summary><p>O prazo depende diretamente da completeza da documentação fornecida pelo cliente e da complexidade do imóvel. Quando o cliente entrega toda a documentação necessária de forma organizada, trabalhamos com um dos menores prazos do mercado. Entre em contato para saber o prazo estimado do seu imóvel especificamente.</p></details>
+                <details><summary>Que documentos precisam ser apresentados?</summary><p>Geralmente: matrícula atualizada do imóvel, CCIR, ITR dos últimos anos, documentos pessoais do proprietário e escritura. Cada imóvel tem suas particularidades — orientamos você sobre exatamente o que é necessário antes de começar.</p></details>
+                <details><summary>Vocês atendem em qual região?</summary><p>Atendemos Juiz de Fora e toda a Zona da Mata Mineira, com raio de até 300 km. A CAD360 tem atuação nacional — para imóveis em outras regiões, avaliamos caso a caso. Informe a localização do seu imóvel no contato.</p></details>
+                <details><summary>Como solicito um orçamento?</summary><p>Pelo WhatsApp. Informe o tamanho aproximado do imóvel, a localização e a situação atual da documentação. Respondemos com o valor e o prazo estimado. O orçamento é gratuito e sem compromisso.</p></details>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-final">
+                <span class="section-label"><span class="ms label-icon">chat</span>Orçamento sem compromisso</span>
+                <h2>Proteja o que você levou<br>a vida inteira para construir.</h2>
+                <p>Não deixe a documentação da sua terra para depois. Imóvel irregular não vende, não financia e não passa de herança sem complicação. Fale agora com Felipe — o especialista que outros especialistas consultam.</p>
+                <a class="btn btn-primary" href="https://wa.me/5532998312306?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20georreferenciamento." target="_blank" rel="noopener noreferrer"><span class="ms">chat</span>Solicitar Orçamento Agora</a>
+                <div class="cta-meta">Atendimento pelo WhatsApp · Orçamento sem compromisso · Resposta rápida</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>CAD360 — Topografia e Georreferenciamento de Imóveis Rurais</strong></p>
+            <p>Juiz de Fora e região · Zona da Mata Mineira · Fundada em 2013</p>
+            <p>© 2026 CAD360. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/5532998312306?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20georreferenciamento." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp CAD360">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+    </a>
+    <script>
+        (function () {
+            var whatsappLabel = 'whatsapp_cad360';
+
+            function safeGtag() {
+                return typeof window !== 'undefined' && typeof window.gtag === 'function';
+            }
+
+            function trackWhatsappClick() {
+                if (!safeGtag()) return;
+
+                window.gtag('event', 'click_whatsapp', {
+                    event_category: 'lead',
+                    event_label: whatsappLabel
+                });
+
+                window.gtag('event', 'conversion', {
+                    send_to: 'AW-18076525810/DGgcCMKy3qscEPLJx6tD'
+                });
+            }
+
+            function isWhatsappHref(href) {
+                var value = (href || '').toLowerCase();
+                return value.indexOf('wa.me') !== -1 ||
+                    value.indexOf('api.whatsapp.com') !== -1 ||
+                    value.indexOf('whatsapp') !== -1;
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var links = document.querySelectorAll('a[href]');
+
+                links.forEach(function (link) {
+                    var href = link.getAttribute('href') || '';
+
+                    if (isWhatsappHref(href)) {
+                        link.addEventListener('click', trackWhatsappClick);
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
