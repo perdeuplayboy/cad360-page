@@ -27,6 +27,26 @@ def formatar_url(cidade):
         nome_formatado = nome_formatado.replace(antigo, novo)
     return nome_formatado
 
+def gerar_sitemap():
+    raiz_projeto = os.path.dirname(os.path.abspath(__file__))
+
+    sitemap = '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://cad360.com.br/</loc></url>
+'''
+
+    for cidade in cidades:
+        slug = formatar_url(cidade)
+        sitemap += f'<url><loc>https://cad360.com.br/georreferenciamento-em-{slug}/</loc></url>\n'
+
+    sitemap += '</urlset>\n'
+
+    caminho_sitemap = os.path.join(raiz_projeto, "sitemap.xml")
+    with open(caminho_sitemap, "w", encoding="utf-8") as file:
+        file.write(sitemap)
+
+    print("Gerado: sitemap.xml")
+
 def gerar_paginas():
     pasta_saida = "paginas_cidades"
     os.makedirs(pasta_saida, exist_ok=True)
@@ -53,6 +73,8 @@ def gerar_paginas():
             file.write(html_final)
             
         print(f"Gerado: {nome_arquivo}")
+
+    gerar_sitemap()
 
 if __name__ == "__main__":
     gerar_paginas()
