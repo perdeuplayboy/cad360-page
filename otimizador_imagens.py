@@ -1,6 +1,6 @@
 import os
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 IMAGENS_GALERIA = [
     "campo-levantamento-01.png",
@@ -35,6 +35,7 @@ def otimizar_imagens():
         caminho_saida = os.path.join(pasta_galeria, nome_thumbnail(arquivo))
 
         with Image.open(caminho_entrada) as imagem:
+            imagem = ImageOps.exif_transpose(imagem)
             imagem = imagem.convert("RGB")
             largura, altura = imagem.size
 
