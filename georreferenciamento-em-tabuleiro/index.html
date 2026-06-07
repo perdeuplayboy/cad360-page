@@ -881,6 +881,40 @@
             background: rgba(255, 255, 255, 0.22);
         }
 
+        .photo-lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 48px;
+            height: 48px;
+            border: 0;
+            border-radius: var(--radius-md);
+            background: rgba(0, 0, 0, 0.45);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .photo-lightbox-nav .ms {
+            font-size: 28px;
+        }
+
+        .photo-lightbox-nav:hover {
+            background: rgba(0, 0, 0, 0.65);
+        }
+
+        .photo-lightbox-prev {
+            left: max(12px, env(safe-area-inset-left));
+        }
+
+        .photo-lightbox-next {
+            right: max(12px, env(safe-area-inset-right));
+        }
+
         .photo-lightbox-hint {
             color: rgba(255, 255, 255, 0.65);
             font-size: 0.78rem;
@@ -1003,6 +1037,30 @@
             .hero h1 { font-size: clamp(1.75rem, 8vw, 2.25rem); }
             .topbar .container { justify-content: space-between; }
             .logo-wrap img { height: 36px; }
+
+            .photo-lightbox {
+                padding: 56px 12px 88px;
+            }
+
+            .photo-lightbox img {
+                max-height: 58vh;
+            }
+
+            .photo-lightbox-nav {
+                top: auto;
+                bottom: max(16px, env(safe-area-inset-bottom));
+                transform: none;
+                width: 44px;
+                height: 44px;
+            }
+
+            .photo-lightbox-prev {
+                left: max(12px, env(safe-area-inset-left));
+            }
+
+            .photo-lightbox-next {
+                right: max(12px, env(safe-area-inset-right));
+            }
         }
     </style>
 </head>
@@ -1065,37 +1123,37 @@
             <p class="section-subtitle">Confira os serviços executados pela CAD360 em propriedades rurais e obras complexas de infraestrutura. Estes registros ilustram a nossa capacidade operacional, a alta precisão dos nossos equipamentos de levantamento e a adaptação técnica às exigências específicas de cada empreendimento.</p>
             <div class="photo-grid">
                 <figure class="photo-card">
-                    <button type="button" class="photo-zoom" data-full-src="/galeria/campo-levantamento-01.png" aria-label="Ampliar: levantamento em propriedade rural">
+                    <button type="button" class="photo-zoom" data-full-src="/galeria/campo-levantamento-01-hd.webp" aria-label="Ampliar: levantamento em propriedade rural">
                         <img src="/galeria/campo-levantamento-01-thumb.webp" alt="Levantamento topográfico em propriedade rural" class="photo-thumb photo-thumb--pos-1" loading="lazy">
                     </button>
                     <figcaption>Atendimento em propriedades rurais da região.</figcaption>
                 </figure>
                 <figure class="photo-card">
-                    <button type="button" class="photo-zoom" data-full-src="/galeria/IMG_20250320_141213884.jpg" aria-label="Ampliar: atuação em campo nas condições reais do imóvel">
+                    <button type="button" class="photo-zoom" data-full-src="/galeria/IMG_20250320_141213884-hd.webp" aria-label="Ampliar: atuação em campo nas condições reais do imóvel">
                         <img src="/galeria/IMG_20250320_141213884-thumb.webp" alt="Trabalho de topografia em campo na região" class="photo-thumb photo-thumb--pos-2" loading="lazy">
                     </button>
                     <figcaption>Equipamentos profissionais utilizados nos levantamentos.</figcaption>
                 </figure>
                 <figure class="photo-card">
-                    <button type="button" class="photo-zoom" data-full-src="/galeria/trabalhos-03-obras.jpeg" aria-label="Ampliar: georreferenciamento no terreno">
+                    <button type="button" class="photo-zoom" data-full-src="/galeria/trabalhos-03-obras-hd.webp" aria-label="Ampliar: georreferenciamento no terreno">
                         <img src="/galeria/trabalhos-03-obras-thumb.webp" alt="Operação de georreferenciamento no terreno" class="photo-thumb photo-thumb--pos-3" loading="lazy">
                     </button>
                     <figcaption>Segurança jurídica e precisão absoluta na demarcação de limites da sua propriedade.</figcaption>
                 </figure>
                 <figure class="photo-card">
-                    <button type="button" class="photo-zoom" data-full-src="/galeria/IMG_20250516_155640436.jpg" aria-label="Ampliar: equipe CAD360 em serviço de campo">
+                    <button type="button" class="photo-zoom" data-full-src="/galeria/IMG_20250516_155640436-hd.webp" aria-label="Ampliar: equipe CAD360 em serviço de campo">
                         <img src="/galeria/IMG_20250516_155640436-thumb.webp" alt="Equipe CAD360 em serviço de campo" class="photo-thumb photo-thumb--pos-4" loading="lazy">
                     </button>
                     <figcaption>Atuação direta em campo durante a execução dos serviços.</figcaption>
                 </figure>
                 <figure class="photo-card">
-                    <button type="button" class="photo-zoom" data-full-src="/galeria/PXL_20250818_115339415.jpg" aria-label="Ampliar: estação total e receptor GNSS">
+                    <button type="button" class="photo-zoom" data-full-src="/galeria/PXL_20250818_115339415-hd.webp" aria-label="Ampliar: estação total e receptor GNSS">
                         <img src="/galeria/PXL_20250818_115339415-thumb.webp" alt="Estação total e receptor GNSS em obra" class="photo-thumb photo-thumb--pos-5" loading="lazy">
                     </button>
                     <figcaption>Precisão e controle em levantamentos e medições.</figcaption>
                 </figure>
                 <figure class="photo-card">
-                    <button type="button" class="photo-zoom" data-full-src="/galeria/campo-atendimento.jpeg" aria-label="Ampliar: atendimento em Minas Gerais">
+                    <button type="button" class="photo-zoom" data-full-src="/galeria/campo-atendimento-hd.webp" aria-label="Ampliar: atendimento em Minas Gerais">
                         <img src="/galeria/campo-atendimento-thumb.webp" alt="Atendimento e trabalho de topografia em Minas Gerais" class="photo-thumb photo-thumb--pos-6" loading="lazy">
                     </button>
                     <figcaption>Uso de tecnologia para captura e análise de dados geoespaciais.</figcaption>
@@ -1285,9 +1343,11 @@
 
     <div class="photo-lightbox" id="photo-lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada da foto" hidden>
         <button type="button" class="photo-lightbox-close" aria-label="Fechar visualização"><span class="ms">close</span></button>
+        <button type="button" class="photo-lightbox-nav photo-lightbox-prev" aria-label="Foto anterior"><span class="ms">chevron_left</span></button>
+        <button type="button" class="photo-lightbox-nav photo-lightbox-next" aria-label="Próxima foto"><span class="ms">chevron_right</span></button>
         <img src="" alt="">
         <p class="photo-lightbox-caption"></p>
-        <p class="photo-lightbox-hint">Clique fora da imagem ou pressione Esc para fechar</p>
+        <p class="photo-lightbox-hint">Use ← → para navegar · Esc ou clique fora para fechar</p>
     </div>
 
     <a class="whatsapp-float" href="https://wa.me/5532998312306?text=Ol%C3%A1!%20Sou%20de%20Tabuleiro%20e%20Gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp CAD360">
@@ -1365,11 +1425,45 @@
                     var lightboxImg = photoLightbox.querySelector('img');
                     var lightboxCaption = photoLightbox.querySelector('.photo-lightbox-caption');
                     var lightboxClose = photoLightbox.querySelector('.photo-lightbox-close');
+                    var lightboxPrev = photoLightbox.querySelector('.photo-lightbox-prev');
+                    var lightboxNext = photoLightbox.querySelector('.photo-lightbox-next');
+                    var photoButtons = Array.prototype.slice.call(document.querySelectorAll('.photo-zoom'));
+                    var currentIndex = 0;
 
-                    function openPhotoLightbox(src, alt, caption) {
-                        lightboxImg.src = src;
-                        lightboxImg.alt = alt || '';
-                        lightboxCaption.textContent = caption || '';
+                    function getPhotoData(index) {
+                        var btn = photoButtons[index];
+                        if (!btn) {
+                            return { src: '', alt: '', caption: '' };
+                        }
+
+                        var thumb = btn.querySelector('img');
+                        var card = btn.closest('.photo-card');
+                        var captionEl = card ? card.querySelector('figcaption') : null;
+                        var caption = captionEl
+                            ? captionEl.textContent.replace(' Clique na imagem para ampliar.', '')
+                            : '';
+
+                        return {
+                            src: btn.getAttribute('data-full-src') || (thumb ? thumb.getAttribute('src') : ''),
+                            alt: thumb ? (thumb.getAttribute('alt') || '') : '',
+                            caption: caption
+                        };
+                    }
+
+                    function showPhotoAtIndex(index) {
+                        if (!photoButtons.length) {
+                            return;
+                        }
+
+                        currentIndex = (index + photoButtons.length) % photoButtons.length;
+                        var data = getPhotoData(currentIndex);
+                        lightboxImg.src = data.src;
+                        lightboxImg.alt = data.alt;
+                        lightboxCaption.textContent = data.caption;
+                    }
+
+                    function openPhotoLightbox(index) {
+                        showPhotoAtIndex(index);
                         photoLightbox.hidden = false;
                         photoLightbox.classList.add('is-open');
                         document.body.style.overflow = 'hidden';
@@ -1383,19 +1477,33 @@
                         document.body.style.overflow = '';
                     }
 
-                    document.querySelectorAll('.photo-zoom').forEach(function (btn) {
+                    function nextImage() {
+                        showPhotoAtIndex(currentIndex + 1);
+                    }
+
+                    function prevImage() {
+                        showPhotoAtIndex(currentIndex - 1);
+                    }
+
+                    photoButtons.forEach(function (btn, index) {
                         btn.addEventListener('click', function () {
-                            var thumb = btn.querySelector('img');
-                            var card = btn.closest('.photo-card');
-                            var captionEl = card ? card.querySelector('figcaption') : null;
-                            var caption = captionEl ? captionEl.textContent.replace(' Clique na imagem para ampliar.', '') : '';
-                            openPhotoLightbox(
-                                btn.getAttribute('data-full-src') || (thumb ? thumb.getAttribute('src') : ''),
-                                thumb ? thumb.getAttribute('alt') : '',
-                                caption
-                            );
+                            openPhotoLightbox(index);
                         });
                     });
+
+                    if (lightboxPrev) {
+                        lightboxPrev.addEventListener('click', function (event) {
+                            event.stopPropagation();
+                            prevImage();
+                        });
+                    }
+
+                    if (lightboxNext) {
+                        lightboxNext.addEventListener('click', function (event) {
+                            event.stopPropagation();
+                            nextImage();
+                        });
+                    }
 
                     lightboxClose.addEventListener('click', closePhotoLightbox);
                     photoLightbox.addEventListener('click', function (event) {
@@ -1403,9 +1511,20 @@
                             closePhotoLightbox();
                         }
                     });
+
                     document.addEventListener('keydown', function (event) {
-                        if (event.key === 'Escape' && photoLightbox.classList.contains('is-open')) {
+                        if (!photoLightbox.classList.contains('is-open')) {
+                            return;
+                        }
+
+                        if (event.key === 'Escape') {
                             closePhotoLightbox();
+                        } else if (event.key === 'ArrowRight') {
+                            event.preventDefault();
+                            nextImage();
+                        } else if (event.key === 'ArrowLeft') {
+                            event.preventDefault();
+                            prevImage();
                         }
                     });
                 }
