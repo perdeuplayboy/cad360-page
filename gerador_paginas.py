@@ -27,13 +27,21 @@ def formatar_url(cidade):
         nome_formatado = nome_formatado.replace(antigo, novo)
     return nome_formatado
 
+paginas_fixas = [
+    "https://cad360.com.br/",
+    "https://cad360.com.br/consultoria-fundiaria/",
+]
+
+
 def gerar_sitemap():
     raiz_projeto = os.path.dirname(os.path.abspath(__file__))
 
     sitemap = '''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://cad360.com.br/</loc></url>
 '''
+
+    for url in paginas_fixas:
+        sitemap += f'<url><loc>{url}</loc></url>\n'
 
     for cidade in cidades:
         slug = formatar_url(cidade)
