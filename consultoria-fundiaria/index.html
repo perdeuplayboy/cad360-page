@@ -1163,8 +1163,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <figure class="hero-figure hero-glass">
                         <svg viewBox="0 0 520 400" role="img" aria-labelledby="mapa-titulo mapa-desc">
-                            <title id="mapa-titulo">Análise SIGEF com sobreposição entre imóveis rurais</title>
-                            <desc id="mapa-desc">Representação cartográfica de dois polígonos de imóveis rurais certificados com área de sobreposição destacada, exibida em ambiente SIG.</desc>
+                            <title id="mapa-titulo">Sobreposição entre levantamento apresentado e área certificada no SIGEF</title>
+                            <desc id="mapa-desc">Representação cartográfica de um levantamento em análise que se sobrepõe a um imóvel confrontante já certificado no SIGEF, com a área de interseção entre os dois perímetros destacada em ambiente SIG.</desc>
                             <defs>
                                 <linearGradient id="mapaFundo" x1="0" y1="0" x2="1" y2="1">
                                     <stop offset="0%" stop-color="#082a20"/>
@@ -1188,7 +1188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <polygon points="62,120 236,84 288,214 148,286 74,238" fill="#2ECC71" fill-opacity="0.14" stroke="#2ECC71" stroke-width="2.5" stroke-linejoin="round"/>
                             <polygon points="212,150 430,112 466,258 300,316 236,246" fill="#7FB3FF" fill-opacity="0.12" stroke="#7FB3FF" stroke-width="2.5" stroke-dasharray="9 6" stroke-linejoin="round"/>
 
-                            <polygon points="236,152 288,214 264,254 236,246 219,181" fill="url(#mapaHachura)" stroke="#D4AF37" stroke-width="2.5" stroke-linejoin="round"/>
+                            <polygon points="212,150 259,142 288,214 235,241" fill="url(#mapaHachura)" stroke="#D4AF37" stroke-width="2.5" stroke-linejoin="round"/>
 
                             <g fill="#0B3D2E" stroke="#2ECC71" stroke-width="2.5">
                                 <circle cx="62" cy="120" r="5"/><circle cx="236" cy="84" r="5"/>
@@ -1201,18 +1201,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </g>
 
                             <g font-family="Inter, sans-serif" font-size="13" font-weight="700">
-                                <text x="96" y="176" fill="#2ECC71">Matrícula 1.842</text>
-                                <text x="96" y="196" fill="#2ECC71" fill-opacity="0.6" font-size="11" font-weight="600">Certificado SIGEF</text>
+                                <text x="92" y="176" fill="#2ECC71">Matrícula 1.842</text>
+                                <text x="92" y="196" fill="#2ECC71" fill-opacity="0.65" font-size="11" font-weight="600">Processo em análise</text>
                                 <text x="330" y="200" fill="#7FB3FF">Confrontante</text>
-                                <text x="330" y="220" fill="#7FB3FF" fill-opacity="0.6" font-size="11" font-weight="600">Área certificada</text>
-                                <text x="252" y="352" fill="#D4AF37" text-anchor="middle">Sobreposição identificada</text>
+                                <text x="330" y="220" fill="#7FB3FF" fill-opacity="0.65" font-size="11" font-weight="600">Área já certificada</text>
+                                <text x="250" y="312" fill="#D4AF37" text-anchor="middle">Sobreposição identificada</text>
+                                <text x="250" y="331" fill="#D4AF37" fill-opacity="0.7" font-size="11" font-weight="600" text-anchor="middle">≈ 15% da área levantada</text>
                             </g>
 
                             <g stroke="#D4AF37" stroke-width="1.6" stroke-opacity="0.75">
-                                <path d="M252 330 L 252 262" stroke-dasharray="5 4"/>
+                                <path d="M250 296 L 245 244" stroke-dasharray="5 4"/>
                             </g>
                         </svg>
-                        <figcaption><span class="ms">layers</span>Análise espacial em ambiente SIG: sobreposição de imóveis identificada entre áreas certificadas no SIGEF.</figcaption>
+                        <figcaption><span class="ms">layers</span>Análise espacial em ambiente SIG: o levantamento em análise invade área já certificada do confrontante — origem típica de impugnação no SIGEF.</figcaption>
                     </figure>
                 </div>
             </div>
