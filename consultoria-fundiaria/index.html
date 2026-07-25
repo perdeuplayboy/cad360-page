@@ -521,7 +521,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .hero-figure figcaption {
             margin-top: 14px;
-            color: rgba(255,255,255,0.72);
+            color: rgba(255,255,255,0.9);
             font-size: 0.8rem;
             font-weight: 600;
             line-height: 1.5;
@@ -1226,6 +1226,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.18);
         }
 
+        .form-field input.is-invalid,
+        .form-field select.is-invalid,
+        .form-field textarea.is-invalid {
+            border-color: #c62828;
+            background: #fff5f5;
+            box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.16);
+        }
+
+        .form-field input.is-invalid:focus,
+        .form-field select.is-invalid:focus,
+        .form-field textarea.is-invalid:focus {
+            border-color: #c62828;
+            box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.22);
+        }
+
         .form-hint {
             margin-top: 14px;
             color: var(--gray-500);
@@ -1370,7 +1385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="topbar">
         <div class="container">
             <a class="logo-wrap" href="/" aria-label="CAD360 Topografia — página inicial">
-                <img src="/logo-horizontal.png" alt="CAD360 Topografia">
+                <img src="/logo-horizontal.png" alt="Logo da CAD360 Topografia">
                 <span class="logo-helper"><span class="ms label-icon">distance</span>Atendimento em todo o Brasil</span>
             </a>
             <nav class="topbar-nav" aria-label="Navegação principal">
@@ -2013,19 +2028,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 if (!form) return;
 
                 var status = document.getElementById('form-status');
+                var telefoneInput = form.telefone;
+
+                function onlyDigits(value) {
+                    return String(value || '').replace(/\D/g, '');
+                }
+
+                function maskWhatsapp(value) {
+                    var digits = onlyDigits(value).slice(0, 11);
+                    if (digits.length === 0) return '';
+                    if (digits.length <= 2) return '(' + digits;
+                    if (digits.length <= 6) return '(' + digits.slice(0, 2) + ') ' + digits.slice(2);
+                    if (digits.length <= 10) {
+                        return '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 6) + '-' + digits.slice(6);
+                    }
+                    return '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 7) + '-' + digits.slice(7);
+                }
+
+                function clearFieldError(field) {
+                    if (!field) return;
+                    field.classList.remove('is-invalid');
+                    field.removeAttribute('aria-invalid');
+                }
+
+                function markFieldError(field) {
+                    if (!field) return;
+                    field.classList.add('is-invalid');
+                    field.setAttribute('aria-invalid', 'true');
+                }
+
+                function clearAllErrors() {
+                    form.querySelectorAll('.is-invalid').forEach(function (field) {
+                        clearFieldError(field);
+                    });
+                }
+
+                telefoneInput.addEventListener('input', function () {
+                    var cursorEnd = telefoneInput.selectionStart === telefoneInput.value.length;
+                    telefoneInput.value = maskWhatsapp(telefoneInput.value);
+                    if (cursorEnd) {
+                        telefoneInput.setSelectionRange(telefoneInput.value.length, telefoneInput.value.length);
+                    }
+                    clearFieldError(telefoneInput);
+                });
+
+                telefoneInput.addEventListener('blur', function () {
+                    telefoneInput.value = maskWhatsapp(telefoneInput.value);
+                });
+
+                ['nome', 'descricao'].forEach(function (name) {
+                    form[name].addEventListener('input', function () {
+                        clearFieldError(form[name]);
+                    });
+                });
 
                 form.addEventListener('submit', function (event) {
                     event.preventDefault();
+                    clearAllErrors();
 
                     var nome = form.nome.value.trim();
                     var telefone = form.telefone.value.trim();
+                    var telefoneDigits = onlyDigits(telefone);
                     var descricao = form.descricao.value.trim();
+                    var firstInvalid = null;
 
-                    if (!nome || !telefone || !descricao) {
-                        status.textContent = 'Preencha nome, WhatsApp e a descrição do caso para continuar.';
+                    if (!nome) {
+                        markFieldError(form.nome);
+                        firstInvalid = firstInvalid || form.nome;
+                    }
+
+                    if (!telefone || telefoneDigits.length < 10) {
+                        markFieldError(form.telefone);
+                        firstInvalid = firstInvalid || form.telefone;
+                    }
+
+                    if (!descricao) {
+                        markFieldError(form.descricao);
+                        firstInvalid = firstInvalid || form.descricao;
+                    }
+
+                    if (firstInvalid) {
+                        status.textContent = !nome || !descricao || !telefone
+                            ? 'Preencha nome, WhatsApp e a descrição do caso para continuar.'
+                            : 'Informe um WhatsApp válido no formato (00) 00000-0000.';
                         status.style.color = '#c62828';
-                        var faltando = !nome ? form.nome : (!telefone ? form.telefone : form.descricao);
-                        faltando.focus();
+                        firstInvalid.focus();
                         return;
                     }
 
