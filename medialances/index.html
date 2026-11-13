@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Media Lances</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap">
+<style>
+/* Layout: uma coluna de leitura, cabeçalho com a marca, duas seções ancoradas (#termos, #privacidade) */
+:root{
+  --bg:#f6f4fa; --fg:#1d1729; --mut:#5f5675; --line:#ddd6ea; --acc:#e8336f; --acc2:#14a89c;
+  --display:"Space Grotesk",system-ui,sans-serif; --text:"Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#140f1e;--fg:#efeaf7;--mut:#a99fbf;--line:#2e2640;--acc:#ff5c8f;--acc2:#33d6c7;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#140f1e;--fg:#efeaf7;--mut:#a99fbf;--line:#2e2640;--acc:#ff5c8f;--acc2:#33d6c7;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--text);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
+.wrap{max-width:68ch;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{width:44px;height:44px;flex:none}
+h1{font:700 1.9rem/1.1 var(--display);margin:0;text-wrap:balance}
+.sub{color:var(--mut);margin:2px 0 0}
+nav{display:flex;gap:18px;flex-wrap:wrap;font-weight:600}
+a{color:var(--acc)} a:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+section{border-top:1px solid var(--line);padding-top:28px;display:flex;flex-direction:column;gap:10px}
+h2{font:700 1.35rem/1.2 var(--display);margin:0}
+h3{font:600 1rem/1.3 var(--text);margin:10px 0 0}
+p,li{margin:0;max-width:65ch} ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.data{color:var(--mut);font-size:.875rem;letter-spacing:.02em}
+.en{color:var(--mut);font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><path d="M14 8 L56 32 L14 56 Z" fill="var(--acc)"/><path d="M14 40 L56 32 L14 56 Z" fill="var(--acc2)"/></svg>
+    <div>
+      <h1>Media Lances</h1>
+      <p class="sub">Cortes de games e lives · @lancesdeleonida no TikTok e no Instagram</p>
+    </div>
+  </header>
+  <nav><a href="#termos">Termos de Uso</a><a href="#privacidade">Política de Privacidade</a></nav>
+
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <p>A Media Lances produz vídeos curtos sobre games (cortes de lives com autorização dos criadores, curiosidades e notícias) e publica esses vídeos nas próprias contas, como o @lancesdeleonida. O app "Media Lances" no TikTok for Developers serve apenas para enviar esses vídeos à nossa própria conta.</p>
+    <p class="en">Media Lances makes short gaming videos and publishes them to its own accounts. Our TikTok app is used only to upload our own videos to our own account.</p>
+  </section>
+
+  <section id="termos">
+    <h2>Termos de Uso</h2>
+    <p class="data">Vigente desde 12 de novembro de 2026</p>
+    <ul>
+      <li>O app é de uso interno da Media Lances. Ele não é oferecido ao público nem a outros criadores.</li>
+      <li>Só publicamos vídeos produzidos por nós ou cortes de lives cujos criadores autorizaram, sempre com crédito ao criador.</li>
+      <li>Qualquer criador pode pedir a remoção de um corte pelo e-mail abaixo; removemos assim que recebermos o pedido.</li>
+      <li>Seguimos as Diretrizes da Comunidade e os termos de uso do TikTok e do Instagram.</li>
+      <li>Estes termos podem mudar; a data acima indica a versão em vigor.</li>
+    </ul>
+    <p class="en">Terms of Service: internal use only; we publish only our own content or clips authorized and credited to their creators; creators may request removal at any time by email; we follow TikTok and Instagram terms and community guidelines.</p>
+  </section>
+
+  <section id="privacidade">
+    <h2>Política de Privacidade</h2>
+    <p class="data">Vigente desde 12 de novembro de 2026</p>
+    <h3>O que acessamos</h3>
+    <p>Pelo login do TikTok, acessamos somente a nossa própria conta: identificador da conta, nome de exibição e a permissão de enviar e publicar vídeos.</p>
+    <h3>Como usamos</h3>
+    <p>Esses dados servem apenas para publicar os nossos vídeos. Não coletamos dados de outras pessoas, não vendemos nem compartilhamos dados e não usamos os dados para anúncios.</p>
+    <h3>Onde ficam</h3>
+    <p>Os tokens de acesso ficam guardados só no computador da Media Lances e podem ser revogados a qualquer momento nas configurações do TikTok (Segurança → Gerenciar permissões de apps).</p>
+    <h3>Contato</h3>
+    <p>medialances@gmail.com</p>
+    <p class="en">Privacy Policy: we only access our own TikTok account (account ID, display name and video upload/publish permission) to publish our own videos. We do not collect data from other users, and we do not sell or share any data. Tokens are stored only on our own computer and can be revoked in TikTok settings. Contact: medialances@gmail.com</p>
+  </section>
+</div>
+</body>
+</html>
